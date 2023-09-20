@@ -1,0 +1,40 @@
+/* src/styles/officeBearersList.module.css */
+
+.officeBearersList {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .officeBearer {
+    display: inline-block;
+    justify-content: right;
+    position: relative;
+    width: 20%; /* Set width to 25% for 4 columns per line */
+    margin-top: 00px;
+    margin-bottom: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 6px;
+    
+  }
+  
+  .detail {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .photoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  

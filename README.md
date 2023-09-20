@@ -2,6 +2,32 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+## Membership Functionality
+src/components/MembershipCardButton.js
+src/components/MembershipCardTemplate.js
+src/components/MembershipForm.js
+src/components/MembersList.js
+src/components/SearchBar.js
+src/models/Membership.js
+src/pages/membership.js
+src/pages/members/[id].js
+src/pages/members/[mobile].js
+src/pages/api/checkMobileUnique.js
+src/pages/api/member.js
+src/pages/api/searchMembership.js
+
+## Office Bearers Functionality
+src/components/LocationSelector.js
+src/components/OfficeBearersList.js
+src/components/UpdateOfficeBearersForm.js
+src/data/officeBearersData.js
+src/pages/offices.js
+src/pages/officeBearer/[id].js
+src/pages/api/updateOfficeBearers.js
+
+
+
+
 First, run the development server:
 
 ```bash

@@ -1,0 +1,35 @@
+.photoCarousel {
+    width: 100%;
+    margin: 4px auto; /* Center the carousel horizontally */
+    overflow: hidden;
+  }
+  
+  .photoWindowContainer {
+    display: flex;
+    /* Ensure that each photo window takes 30% of the carousel width and there is no wrapping */
+    width: calc(30% * 3); /* Set a fixed width to hold the three photo windows */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snap-scrolling */
+  }
+  
+  .photoWindow {
+    /* Each photo window should take 30% of the carousel width */
+    flex: 0 0 30%;
+    transition: transform 1s ease;
+    scroll-snap-align: both;
+    position: inherit;
+    margin-right: 0px;
+    margin-left: 20px;
+    /* Snap the windows to the start of the container */
+  }
+  
+  .active {
+    transform: translateX(0%);
+  }
+  
+  /* Additional Styling (Modify as per your requirements) */
+  .photoWindow img {
+    width: 70%;
+    height: auto;
+  }
+  

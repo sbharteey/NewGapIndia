@@ -1,0 +1,26 @@
+/* footer.module.css */
+
+.footer {
+    background-color: #0c0c0d;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .socialIcons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .copyRight {
+    font-size: 14px;
+  }
+  

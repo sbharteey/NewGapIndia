@@ -1,0 +1,22 @@
+/* src/styles/globals.css */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Optionally, you can set Arial for specific elements as well */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, sans-serif;
+}
+
+/* Add more rules for other specific elements as needed */
+.contentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

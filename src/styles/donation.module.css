@@ -1,0 +1,113 @@
+/* donation.module.css */
+
+.donationContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .donationContainer h1 {
+    display: flex;
+    justify-content: center;
+    font-weight: lighter;
+    margin-bottom: 20px;
+  }
+  
+  .donationContainer p {
+    display: flex;
+    position: relative;
+    font-size: 16px;
+    line-height: 1px;
+    margin-bottom: 4px;
+    margin-top: 40px;
+    margin-left: 25px;
+  
+  }
+  
+  .paymentDetails {
+    margin-bottom: 80px;
+    margin-top: 60px;
+    font-weight: lighter;
+  }
+  
+  .paymentDetails h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    margin-left: -18px;
+  }
+  
+  .paymentDetails p {
+    font-size: 18px;
+    margin-bottom: 8px;
+    margin-left: -20px;
+  
+  }
+  
+  .qrCodeContainer {
+    text-align: center;
+  }
+  
+  .qrCodeContainer h2 {
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .qrCodeContainer img {
+    display: flex;
+    position: relative;
+    max-width: 200px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    margin-top: -240px;
+    margin-left: 400px;
+  }
+
+  .qrCode {
+    display: flex;
+    position: absolute;
+    bottom: 650px;
+    left: 155px;
+    
+    font-size: 19px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    .donationContainer {
+      padding: 10px;
+    }
+  
+    .donationContainer h1 {
+      font-size: 24px;
+    }
+  
+    .donationContainer p {
+      font-size: 16px;
+    }
+  
+    .paymentDetails h2 {
+      font-size: 20px;
+    }
+  
+    .paymentDetails p {
+      font-size: 16px;
+    }
+  
+    .qrCodeContainer img {
+      max-width: 200px;
+    }
+  }
+  
+    .qrCode {
+      display: flex;
+      position: absolute;
+      margin-top: -310px;
+      margin-left: 425px;
+      font-weight: lighter;
+
+    }
+  
+  

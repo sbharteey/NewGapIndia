@@ -1,0 +1,13 @@
+/* layout.module.css */
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  

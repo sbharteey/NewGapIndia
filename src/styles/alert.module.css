@@ -1,0 +1,33 @@
+/* src/styles/alert.module.css */
+
+/* Centered container for the alert */
+.alert-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to ensure it covers the entire viewport */
+}
+
+/* Alert container styles */
+.alert {
+  display: flex;
+  flex-direction: column; /* Use flex-direction to stack content vertically */
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Success alert */
+.alert-success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Error alert */
+.alert-error {
+  background-color: #f44336;
+  color: white;
+}

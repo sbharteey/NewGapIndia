@@ -1,0 +1,55 @@
+/* offices.module.css */
+
+.officeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.formGroup {
+  margin-bottom: 10px;
+}
+
+/* Style for the location selector */
+.locationSelectorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+/* Style for select elements */
+.selectInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the office bearers list */
+.officeBearersList {
+  margin-top: 20px;
+}
+
+/* Style for individual office bearer item */
+.officeBearerItem {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+/* Style for office bearer photo */
+.officeBearerPhoto {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Other styles... */

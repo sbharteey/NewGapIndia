@@ -1,0 +1,44 @@
+/* navbar.module.css */
+
+.navbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #2c2727;
+  font-style: normal;
+  color: rgb(251, 250, 254);
+  padding: 16px;
+  text-decoration: none;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+  color: white !important;
+}
+
+.navItem a {
+  display: flex;
+  text-decoration: none; /* Remove text decoration for the link */
+  color: rgb(249, 248, 251);
+}
+
+.navItem:hover {
+  color: #ffc107 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .navList {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

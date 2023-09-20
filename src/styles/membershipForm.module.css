@@ -1,0 +1,118 @@
+/* styles/membershipForm.module.css */
+
+.membershipFormContainer {
+  display: flexbox;
+  position: relative;
+  justify-items: center;
+  justify-content: center;
+  max-width: 300px;
+  height: auto;
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 30px;
+  padding-bottom: 8px;
+  padding-top: 0px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.membershipFormContainer h1 {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: lighter;
+  margin-bottom: 4px;
+}
+
+.formGroup label.required::after {
+  content: '*';
+  color: red; /* You can change the color as desired */
+  margin-left: 5px; /* Add some space between label and asterisk */
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="tel"],
+.formGroup input[type="date"],
+.formGroup textarea {
+  width: 92%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.formGroup button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formGroup button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.submitButton {
+  font-size: 18px;
+  background-color: #6443d1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.formGroup select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.fileInputLabel {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+/* Hide the default file input appearance */
+.fileInput {
+  display: none;
+}
+
+/* Style for the custom-styled file input button */
+.fileInputLabel::before {
+  content: 'Choose File';
+  display: flex;
+  justify-content: space-evenly;
+  padding: 9px;
+  background-color: #6443d1;
+  border: 2px solid #f6f6f7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add style for the 'required' class */
+.required {
+  color: rgb(255, 255, 255); /* You can change the color as desired */
+   margin-left: 5px;
+  font-size: 20px;
+}

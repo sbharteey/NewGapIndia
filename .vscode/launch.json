@@ -1,0 +1,11 @@
+{
+    "configurations": [
+    
+        {
+            "type": "chrome",
+            "name": "http://src/pages/api/search.js",
+            "request": "launch",
+            "url": "http://src/pages/api/search.js"
+        }
+    ]
+}

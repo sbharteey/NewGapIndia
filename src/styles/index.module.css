@@ -1,0 +1,33 @@
+/* styles/index.module.css */
+
+/* Wrapper for the content */
+.content {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+/* Styling for the featured videos section */
+.content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Styling for the video carousel and photo carousel components */
+/* You can adjust these styles based on your design */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+}
+
+.carousel-item {
+  flex: 0 0 300px;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
