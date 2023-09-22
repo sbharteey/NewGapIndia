@@ -13,23 +13,6 @@ export function useMembers() {
 }
 
 // Mutation to add a new member
-/*
-export function useAddMember() {
-  return useMutation(async (newMemberData) => {
-    const response = await fetch('/api/member', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newMemberData),
-    });
-
-    
-  });
-}
-*/
-
-
 export function useAddMember() {
   return useMutation(async (newMemberData) => {
     try {
@@ -43,21 +26,17 @@ export function useAddMember() {
 
       if (response.ok) {
         const data = await response.json();
-        return data; 
+        return data;
       } else {
         const errorData = await response.json();
         console.log("now I will throw my error");
-        throw new Error(errorData.error); 
+        throw new Error(errorData.error);
       }
     } catch (error) {
-      throw error; 
+      throw error;
     }
   });
 }
-
-
-
-
 
 // Mutation to update a member
 export function useUpdateMember() {
@@ -78,13 +57,12 @@ export function useUpdateMember() {
 
 // Mutation to delete a member
 export function useDeleteMember() {
-  return useMutation(async () => {
-    const response = await fetch('/api/member', {
+  return useMutation(async (memberId) => {
+    const response = await fetch(`/api/member?id=${memberId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ Id }),
     });
 
     if (!response.ok) {

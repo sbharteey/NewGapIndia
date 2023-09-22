@@ -1,5 +1,5 @@
 // src/pages/api/auth/logout.js
-import { destroySession } from '../../../utils/auth';
+import { destroySession } from '../../api/auth/auth';
 
 export default function handler(req, res) {
   destroySession(req);

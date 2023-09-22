@@ -12,9 +12,7 @@ export default async function handler(req, res) {
     } catch (error) {
       res.status(500).json({ error: 'Failed to fetch membership data.' });
     }
-  } 
-  
-  else if (req.method === 'POST') {
+  } else if (req.method === 'POST') {
     try {
       const {
         mobile,
@@ -25,7 +23,34 @@ export default async function handler(req, res) {
         vidhanSabha,
         voterId,
         email,
+        photoBase64, // Add the Base64-encoded photo
       } = req.body;
+
+      // Generate the unique GAP ID
+      const currentYear = new Date().getFullYear();
+const currentMonth = (new Date().getMonth() + 1).toString().padStart(2, '0');
+const lastMember = await Membership.findOne({}, {}, { sort: { createdAt: -1 } });
+
+let sequentialNumber = '00001'; // Default sequential number
+
+if (lastMember) {
+  const lastGapId = lastMember.gapId || '';
+  const lastYearMonth = lastGapId.substring(8, 14);
+
+  if (lastYearMonth === `${currentYear}${currentMonth}`) {
+    const lastSequentialNumber = parseInt(lastGapId.substring(14));
+    sequentialNumber = (lastSequentialNumber + 1).toString().padStart(5, '0');
+  }
+}
+
+const gapId = `GAP ID - ${currentYear}${currentMonth}${sequentialNumber}`;
+
+
+if (lastMember) {
+  lastMember.gapId = gapId;
+  await lastMember.save();
+}
+
 
       // Check if the mobile number is already in the database
       const existingMobile = await Membership.findOne({ mobile });
@@ -41,7 +66,10 @@ export default async function handler(req, res) {
       }
 
 
+
+      
       const newMember = new Membership({
+        gapId, // Include the generated GAP ID
         mobile,
         name,
         country,
@@ -50,6 +78,7 @@ export default async function handler(req, res) {
         vidhanSabha,
         voterId,
         email, // Email remains optional
+        photoBase64, // Include the Base64-encoded photo
       });
 
       await newMember.save();

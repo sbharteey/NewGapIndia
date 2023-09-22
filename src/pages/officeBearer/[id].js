@@ -1,4 +1,3 @@
-//  src/pages/officeBearer/[id].js
 import React from "react";
 import Link from 'next/link'; 
 import Head from "next/head";
@@ -12,9 +11,12 @@ const OfficeBearerDetails = () => {
   const router = useRouter();
   const { id } = router.query;
 
+  // Ensure 'id' is a string and not undefined
+  const officeBearerId = typeof id === 'string' ? id : '';
+
   const findOfficeBearerById = () => {
     return officeBearersData.find((officeBearer) => {
-      return officeBearer.data.id === id;
+      return officeBearer.data.id === officeBearerId;
     });
   };
 
@@ -25,29 +27,26 @@ const OfficeBearerDetails = () => {
       <Layout>
         <Head>
           <title>Office Bearer Details</title>
-          <meta name="description" content={`Details for Office Bearer ${id}`} />
+          <meta name="description" content={`Details for Office Bearer ${officeBearerId}`} />
         </Head>
 
-        
+        <h1>Office Bearer Details</h1>
 
-          <h1>Office Bearer Details</h1>
-
-          {officeBearer ? (
-            <div>
-              <h2>{officeBearer.title}</h2>
-              <p>Name: {officeBearer.data.name}</p>
-              <p>Membership ID: {officeBearer.data.membershipId}</p>
-              <p>Mobile No: {officeBearer.data.mobileNo}</p>
-            </div>
-          ) : (
+        {officeBearer ? (
+          <div>
+            <h2>{officeBearer.title}</h2>
+            <p>Name: {officeBearer.data.name}</p>
+            <p>Membership ID: {officeBearer.data.membershipId}</p>
+            <p>Mobile No: {officeBearer.data.mobileNo}</p>
+          </div>
+        ) : (
+          <div>
             <p>Office Bearer not found.</p>
-          )}
-<div className={styles.officeContainer}>
-          <Link href="/offices">
-            <div className={styles.returnLink}>Return to Location Selection</div>
-          </Link>
-
-        </div>
+            <Link href="/offices">
+              <div className={styles.returnLink}>Return to Location Selection</div>
+            </Link>
+          </div>
+        )}
       </Layout>
     </div>
   );

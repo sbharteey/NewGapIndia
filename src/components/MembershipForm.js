@@ -5,6 +5,8 @@ import membershipDataStructure from '../../utils/membershipDataStructure';
 import membershipData from '../data/membershipData';
 import styles from '../styles/membershipForm.module.css';
 import Alert from './Alert';
+import { useDropzone } from 'react-dropzone';
+import Image from 'next/image';
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
@@ -22,9 +24,9 @@ const MembershipForm = () => {
     }));
   };
 
-  const handlePhotoChange = (event) => {
-    const photoFile = event.target.files[0];
-    if (photoFile) {
+  const handlePhotoChange = (acceptedFiles) => {
+    if (acceptedFiles.length > 0) {
+      const photoFile = acceptedFiles[0];
       setSelectedPhotoName(photoFile.name); // Set the selected photo name
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -33,16 +35,17 @@ const MembershipForm = () => {
           photo: e.target.result,
         }));
       };
-      reader.readAsArrayBuffer(photoFile);
+      reader.readAsDataURL(photoFile); // Use readAsDataURL to get a base64-encoded image
     }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Basic mobile number validation
-    if (formData.mobile.length !== 10) {
-      setAlert({ message: 'Mobile number should be 10 digits long.', type: 'error' });
+    // Additional mobile number validation
+    const firstDigit = formData.mobile.charAt(0);
+    if (!['6', '7', '8', '9'].includes(firstDigit) || formData.mobile.length !== 10) {
+      setAlert({ message: 'Please use correct mobile number and be 10 digits long.', type: 'error' });
       return;
     }
 
@@ -61,25 +64,18 @@ const MembershipForm = () => {
     }
 
     // Call the mutation with the form data
-    
-
     try {
       const response = await addMemberMutation.mutateAsync(formData);
-  
+
       // Handle the success case
-      console.log('Trying');
-  
       if (response.message) {
         // Member added successfully
-        console.log('Member added successfully:', response.message);
         setAlert({ message: response.message, type: 'success' });
-  
+
         // Optionally, you can clear the form or perform other actions after a successful submission.
         // Clear the form data, for example:
         setFormData(membershipDataStructure);
         setSelectedPhotoName('');
-  
-        console.log('completed');
       } else {
         // Handle other response data or errors if needed
         console.error('Error adding member:', response);
@@ -90,15 +86,15 @@ const MembershipForm = () => {
       console.error('Error adding member:', error.message);
       setAlert({ message: error.message, type: 'error' });
     }
-
-
-
-
-    // Your form submission logic
-    // If successful, set a success alert
-    //setAlert({ message: 'Member added successfully.', type: 'success' });
-    // console.log(JSON.stringify(formData, null, 2));
   };
+
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: '.jpg, .jpeg, .png',
+    onDrop: handlePhotoChange,
+  });
+
+
+  
 
   return (
     <div>
@@ -216,13 +212,15 @@ const MembershipForm = () => {
             >
               <option value="">Select Vidhan Sabha</option>
               {formData.lokSabha &&
-                membershipData.vidhanSabhaData[formData.state]?.[formData.lokSabha]?.map(
-                  (vidhanSabha) => (
-                    <option key={vidhanSabha} value={vidhanSabha}>
-                      {vidhanSabha}
-                    </option>
-                  )
-                )}
+  membershipData.vidhanSabhaData[formData.state]?.[formData.lokSabha]?.map(
+    (vidhanSabha) => (
+      <option key={vidhanSabha} value={vidhanSabha}>
+        {vidhanSabha}
+      </option>
+    )
+  )}
+
+
             </select>
           </div>
 
@@ -248,23 +246,34 @@ const MembershipForm = () => {
             />
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="photo" className={styles.fileInputLabel}>
-              Member Photo (JPG/PNG)
-            </label>
-            <input
-              type="file"
-              id="photo"
-              name="photo"
-              accept=".jpg, .jpeg, .png"
-              onChange={handlePhotoChange}
-              className={styles.fileInput}
-            />
-            {/* Display the selected photo name */}
-            {selectedPhotoName && (
-              <p className={styles.selectedPhotoName}>Selected Photo: {selectedPhotoName}</p>
-            )}
-          </div>
+          <div className={`${styles.formGroup} ${styles.dropzone}`} {...getRootProps()}>
+  <label htmlFor="photo" className={styles.fileInputLabel}>
+    Member Photo (JPG/PNG)
+  </label>
+  <input
+    type="file"
+    id="photo"
+    name="photo"
+    accept="image/*" // Allow only image files
+    onChange={(e) => handlePhotoUpload(e.target.files[0])}
+    className={styles.fileInput}
+    {...getInputProps()}
+  />
+  {/* Display the selected photo preview */}
+  {formData.photo && (
+    <div className={styles.selectedPhotoPreview}>
+      <Image
+        src={formData.photo}
+        alt="Selected"
+        width={100} // Set the width and height as needed
+        height={100}
+      />
+    </div>
+  )}
+  <p>Drag & drop a photo here, or click to select one</p>
+</div>
+
+
 
           <button type="submit" className={styles.submitButton}>
             Submit

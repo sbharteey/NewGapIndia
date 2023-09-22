@@ -116,3 +116,50 @@
    margin-left: 5px;
   font-size: 20px;
 }
+
+/* styles/membershipForm.module.css */
+
+/* ... (previous styles) */
+
+/* Add drop zone styles */
+.dropzone {
+  border: 2px dashed #007bff; /* Dashed border for drop zone */
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone:hover {
+  background-color: #f6f6f7; /* Change background color on hover */
+}
+
+/* Style for the custom-styled file input button */
+.fileInputLabel::before {
+  content: 'Choose File';
+  display: flex;
+  justify-content: space-evenly;
+  padding: 9px;
+  background-color: #6443d1;
+  border: 2px solid #f6f6f7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add style for the 'required' class */
+.required {
+  color: rgb(255, 255, 255); /* You can change the color as desired */
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+/* Style for the selected photo name */
+.selectedPhotoName {
+  margin-top: 10px;
+  font-weight: lighter;
+}
+
+/* Style for the selected photo preview */
+.selectedPhotoPreview {
+  max-width: 100%; /* Ensure the photo doesn't exceed container width */
+  margin-top: 10px;
+}
