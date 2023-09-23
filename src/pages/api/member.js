@@ -29,15 +29,18 @@ export default async function handler(req, res) {
       // Generate the unique GAP ID
       const currentYear = new Date().getFullYear();
 const currentMonth = (new Date().getMonth() + 1).toString().padStart(2, '0');
-const lastMember = await Membership.findOne({}, {}, { sort: { createdAt: -1 } });
+//const lastMember = await Membership.findOne({}, {}, { sort: { createdAt: -1 } });
+//const lastMember = await Membership.findOne({}, {}, { sort: { createdAt: -1 } }).sort({ createdAt: -1 });
+const lastMember = await Membership.findOne({}, {}, { sort: { _id: -1 } });
 
-let sequentialNumber = '00001'; // Default sequential number
+let sequentialNumber = '00002'; // Default sequential number
 
 if (lastMember) {
   const lastGapId = lastMember.gapId || '';
-  const lastYearMonth = lastGapId.substring(8, 14);
+  const lastYearMonth = lastGapId.substring(9, 15);
 
   if (lastYearMonth === `${currentYear}${currentMonth}`) {
+
     const lastSequentialNumber = parseInt(lastGapId.substring(14));
     sequentialNumber = (lastSequentialNumber + 1).toString().padStart(5, '0');
   }

@@ -16,6 +16,7 @@ export function useMembers() {
 export function useAddMember() {
   return useMutation(async (newMemberData) => {
     try {
+      console.log("Now going to member.js");
       const response = await fetch('/api/member', {
         method: 'POST',
         headers: {
@@ -23,7 +24,7 @@ export function useAddMember() {
         },
         body: JSON.stringify(newMemberData),
       });
-
+console.log("came out of member.js");
       if (response.ok) {
         const data = await response.json();
         return data;
