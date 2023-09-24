@@ -17,7 +17,7 @@ try {
     vidhanSabha: String,
     voterId: String,
     email: { type: String, unique: true, sparse: true }, // Make email unique and optional
-    photoBase64: String, // Store the photo in Base64 format
+    photo: String, // Store the photo in Base64 format
   });
 
   Membership = mongoose.model('Membership', membershipSchema);

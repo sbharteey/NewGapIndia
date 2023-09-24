@@ -19,6 +19,7 @@ const SearchBar = () => {
       if (response.ok) {
         const data = await response.json();
         if (data && data._id) {
+          console.log(data)
           router.push(`/members/${data.mobile}`);
         } else {
           setSearchError('');

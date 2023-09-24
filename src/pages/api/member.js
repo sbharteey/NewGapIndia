@@ -23,8 +23,10 @@ export default async function handler(req, res) {
         vidhanSabha,
         voterId,
         email,
-        photoBase64, // Add the Base64-encoded photo
+        photo, // Add the Base64-encoded photo
       } = req.body;
+
+      console.log(photo);
 
       // Generate the unique GAP ID
       const currentYear = new Date().getFullYear();
@@ -33,26 +35,21 @@ const currentMonth = (new Date().getMonth() + 1).toString().padStart(2, '0');
 //const lastMember = await Membership.findOne({}, {}, { sort: { createdAt: -1 } }).sort({ createdAt: -1 });
 const lastMember = await Membership.findOne({}, {}, { sort: { _id: -1 } });
 
-let sequentialNumber = '00002'; // Default sequential number
+let sequentialNumber = '00001'; // Default sequential number
 
 if (lastMember) {
   const lastGapId = lastMember.gapId || '';
   const lastYearMonth = lastGapId.substring(9, 15);
 
   if (lastYearMonth === `${currentYear}${currentMonth}`) {
-
-    const lastSequentialNumber = parseInt(lastGapId.substring(14));
+console.log(lastGapId);
+    const lastSequentialNumber = parseInt(lastGapId.substring(15));
+    console.log(lastSequentialNumber);
     sequentialNumber = (lastSequentialNumber + 1).toString().padStart(5, '0');
   }
 }
 
 const gapId = `GAP ID - ${currentYear}${currentMonth}${sequentialNumber}`;
-
-
-if (lastMember) {
-  lastMember.gapId = gapId;
-  await lastMember.save();
-}
 
 
       // Check if the mobile number is already in the database
@@ -68,7 +65,8 @@ if (lastMember) {
         return res.status(400).json({ error: 'Email Id already exists.' });
       }
 
-
+console.log(mobile);
+console.log(photo);
 
       
       const newMember = new Membership({
@@ -81,7 +79,7 @@ if (lastMember) {
         vidhanSabha,
         voterId,
         email, // Email remains optional
-        photoBase64, // Include the Base64-encoded photo
+        photo, // Include the Base64-encoded photo
       });
 
       await newMember.save();

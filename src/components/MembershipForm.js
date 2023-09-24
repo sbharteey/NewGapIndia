@@ -65,6 +65,9 @@ const MembershipForm = () => {
 
     // Call the mutation with the form data
     try {
+
+      console.log(formData);
+      console.log("Sending this data to useAddMember");
       const response = await addMemberMutation.mutateAsync(formData);
 
       // Handle the success case
