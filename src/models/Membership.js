@@ -16,7 +16,6 @@ try {
     lokSabha: String,
     vidhanSabha: String,
     voterId: String,
-    email: { type: String, unique: true, sparse: true }, // Make email unique and optional
     photo: String, // Store the photo in Base64 format
   });
 

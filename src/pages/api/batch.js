@@ -32,7 +32,6 @@ export default async function handler(req, res) {
           lokSabha,
           vidhanSabha,
           voterId,
-          email,
         } = req.body;
 
         // Check if the mobile number is already in the database
@@ -50,7 +49,6 @@ export default async function handler(req, res) {
           lokSabha,
           vidhanSabha,
           voterId,
-          email, // Email remains optional
         });
 
         await newMember.save();

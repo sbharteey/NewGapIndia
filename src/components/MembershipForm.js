@@ -30,7 +30,7 @@ const MembershipForm = () => {
     if (acceptedFiles.length > 0) {
       const photoFile = acceptedFiles[0];
       setSelectedPhotoName(photoFile.name); // Set the selected photo name
-  
+
       new Compressor(photoFile, {
         quality: 0.6, // Adjust the quality as needed
         maxWidth: 200, // Adjust the dimensions as needed
@@ -51,10 +51,6 @@ const MembershipForm = () => {
       });
     }
   };
-  
-
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -65,14 +61,8 @@ const MembershipForm = () => {
       return;
     }
 
-    // Simulate a successful email and mobile uniqueness check
-    const isEmailUnique = true;
+    // Simulate a successful mobile uniqueness check
     const isMobileUnique = true;
-
-    if (!isEmailUnique) {
-      setAlert({ message: 'Email ID already exists.', type: 'error' });
-      return;
-    }
 
     if (!isMobileUnique) {
       setAlert({ message: 'Mobile number already exists.', type: 'error' });
@@ -112,9 +102,6 @@ const MembershipForm = () => {
     onDrop: handlePhotoChange,
   });
 
-
-  
-
   return (
     <div>
       {/* Display the alert if it exists */}
@@ -139,6 +126,7 @@ const MembershipForm = () => {
               type="text"
               id="name"
               name="name"
+              placeholder="Full Name"
               value={formData.name}
               onChange={handleInputChange}
               required
@@ -155,6 +143,7 @@ const MembershipForm = () => {
               type="tel"
               id="mobile"
               name="mobile"
+              placeholder="ID Card will be sent if No. in WhatsApp"
               value={formData.mobile}
               onChange={handleInputChange}
               required
@@ -231,13 +220,13 @@ const MembershipForm = () => {
             >
               <option value="">Select Vidhan Sabha</option>
               {formData.lokSabha &&
-  membershipData.vidhanSabhaData[formData.state]?.[formData.lokSabha]?.map(
-    (vidhanSabha) => (
-      <option key={vidhanSabha} value={vidhanSabha}>
-        {vidhanSabha}
-      </option>
-    )
-  )}
+                membershipData.vidhanSabhaData[formData.state]?.[formData.lokSabha]?.map(
+                  (vidhanSabha) => (
+                    <option key={vidhanSabha} value={vidhanSabha}>
+                      {vidhanSabha}
+                    </option>
+                  )
+                )}
 
 
             </select>
@@ -254,45 +243,32 @@ const MembershipForm = () => {
             />
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email ID</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-          </div>
-
           <div className={`${styles.formGroup} ${styles.dropzone}`} {...getRootProps()}>
-  <label htmlFor="photo" className={styles.fileInputLabel}>
-    Member Photo (JPG/PNG)
-  </label>
-  <input
-    type="file"
-    id="photo"
-    name="photo"
-    accept="image/*" // Allow only image files
-    onChange={(e) => handlePhotoUpload(e.target.files[0])}
-    className={styles.fileInput}
-    {...getInputProps()}
-  />
-  {/* Display the selected photo preview */}
-  {formData.photo && (
-    <div className={styles.selectedPhotoPreview}>
-      <Image
-        src={formData.photo}
-        alt="Selected"
-        width={100} // Set the width and height as needed
-        height={100}
-      />
-    </div>
-  )}
-  <p>Drag & drop a photo here, or click to select one</p>
-</div>
-
-
+            <label htmlFor="photo" className={styles.fileInputLabel}>
+              Member Photo (JPG/PNG)
+            </label>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*" // Allow only image files
+              onChange={(e) => handlePhotoUpload(e.target.files[0])}
+              className={styles.fileInput}
+              {...getInputProps()}
+            />
+            {/* Display the selected photo preview */}
+            {formData.photo && (
+              <div className={styles.selectedPhotoPreview}>
+                <Image
+                  src={formData.photo}
+                  alt="Selected"
+                  width={100} // Set the width and height as needed
+                  height={100}
+                />
+              </div>
+            )}
+            <p>Upload your small Passport size Photo so that Photo ID card will look beautiful.</p>
+          </div>
 
           <button type="submit" className={styles.submitButton}>
             Submit

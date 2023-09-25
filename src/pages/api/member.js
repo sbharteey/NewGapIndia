@@ -22,7 +22,6 @@ export default async function handler(req, res) {
         lokSabha,
         vidhanSabha,
         voterId,
-        email,
         photo, // Add the Base64-encoded photo
       } = req.body;
 
@@ -59,11 +58,7 @@ const gapId = `GAP ID - ${currentYear}${currentMonth}${sequentialNumber}`;
         return res.status(400).json({ error: 'Mobile number already exists.' });
       }
 
-      const existingEmail = await Membership.findOne({ email });
-
-      if (existingEmail) {
-        return res.status(400).json({ error: 'Email Id already exists.' });
-      }
+      
 
 console.log(mobile);
 console.log(photo);
@@ -78,7 +73,6 @@ console.log(photo);
         lokSabha,
         vidhanSabha,
         voterId,
-        email, // Email remains optional
         photo, // Include the Base64-encoded photo
       });
 
@@ -98,7 +92,6 @@ console.log(photo);
         lokSabha,
         vidhanSabha,
         voterId,
-        email,
       } = req.body;
       const updatedMember = await Membership.findOneAndUpdate(
         { mobile }, // Update based on mobile (assuming mobile is unique)
@@ -109,7 +102,6 @@ console.log(photo);
           lokSabha,
           vidhanSabha,
           voterId,
-          email, // Email remains optional
         },
         { new: true } // To return the updated document
       );

@@ -7,7 +7,6 @@ const membershipDataStructure = {
     lokSabha: "",
     vidhanSabha: "",
     voterId: "",
-    email: "",
     photo: null,
   };
   
