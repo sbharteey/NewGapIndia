@@ -29,7 +29,8 @@ const MemberCardPage = () => {
 
       try {
         // Make an API request to fetch member data using the 'mobile' query parameter
-        const response = await fetch(`/api/members/${mobile}`);
+        const response = await fetch(`/members/${mobile}`);
+
         if (response.ok) {
           const data = await response.json();
           // Update the member data in the state

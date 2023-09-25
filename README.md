@@ -16,6 +16,13 @@ src/pages/api/checkMobileUnique.js
 src/pages/api/member.js
 src/pages/api/searchMembership.js
 
+
+## flow chart membership form to icard
+src/components/MembershipForm.js
+src/pages/api/member.js
+src/models/Membership.js
+src/pages/members/[mobile].js
+
 ## Office Bearers Functionality
 src/components/LocationSelector.js
 src/components/OfficeBearersList.js

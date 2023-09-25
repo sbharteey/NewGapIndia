@@ -7,6 +7,8 @@ import styles from '../styles/membershipForm.module.css';
 import Alert from './Alert';
 import { useDropzone } from 'react-dropzone';
 import Image from 'next/image';
+import Compressor from 'compressorjs';
+
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
@@ -28,16 +30,30 @@ const MembershipForm = () => {
     if (acceptedFiles.length > 0) {
       const photoFile = acceptedFiles[0];
       setSelectedPhotoName(photoFile.name); // Set the selected photo name
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          photo: e.target.result,
-        }));
-      };
-      reader.readAsDataURL(photoFile); // Use readAsDataURL to get a base64-encoded image
+  
+      new Compressor(photoFile, {
+        quality: 0.6, // Adjust the quality as needed
+        maxWidth: 200, // Adjust the dimensions as needed
+        maxHeight: 200,
+        success(result) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            setFormData((prevFormData) => ({
+              ...prevFormData,
+              photo: e.target.result,
+            }));
+          };
+          reader.readAsDataURL(result);
+        },
+        error(err) {
+          console.error('Error compressing image:', err);
+        },
+      });
     }
   };
+  
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
