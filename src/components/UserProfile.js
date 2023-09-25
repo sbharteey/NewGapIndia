@@ -1,5 +1,5 @@
-// src/components/UserProfile.jsx
 import React, { useState } from 'react';
+import Image from 'next/image'; // Import the Image component
 
 function UserProfile() {
   const [photo, setPhoto] = useState(null); // State to store the Base64 photo
@@ -23,7 +23,13 @@ function UserProfile() {
       <input type="file" accept="image/*" onChange={(e) => handlePhotoUpload(e.target.files[0])} />
       {photo && (
         <div>
-          <img src={`data:image/jpeg;base64,${photo}`} alt="User's Photo" />
+          {/* Use the Image component to optimize the image */}
+          <Image
+            src={`data:image/jpeg;base64,${photo}`}
+            alt="User's Photo"
+            width={200} // Specify the desired width
+            height={200} // Specify the desired height
+          />
         </div>
       )}
     </div>

@@ -1,4 +1,3 @@
-// src/components/LocationSelector.js
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/locationSelector.module.css";
@@ -12,31 +11,10 @@ const LocationSelector = ({
   handleVidhanSabhaChange,
   handleFormSubmit,
 }) => {
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
-    console.log("Submit button clicked"); // Debugging line
-    handleFormSubmit(formData); // Call the handleFormSubmit function
-    console.log("After handleFormSubmit"); // Debugging line
-
-    try {
-      // Call the function to get office bearers data based on selected location
-      const filteredOfficeBearers = getOfficeBearersForSelectedLocation();
-      console.log("Filtered office bearers:", filteredOfficeBearers); // Debugging line
-
-      // You can use the filteredOfficeBearers for further processing here if needed.
-      await handleFormSubmit(filteredOfficeBearers);
-
-      // Reset the form or perform any other necessary actions after successful submission.
-    } catch (error) {
-      // Handle any errors here, e.g., show an error message to the user.
-      console.error('Error submitting form:', error);
-    }
-  };
-
   // Function to get office bearers data based on selected location
   const getOfficeBearersForSelectedLocation = () => {
     // Filter the office bearers data based on the selected location
-    const filteredOfficeBearers = officeBearersData.filter((officeBearer) => {
+    const filteredOfficeBearers = officesData.filter((officeBearer) => {
       // Check if the office bearer's data has a 'location' property
       if (officeBearer && officeBearer.data && officeBearer.data.location) {
         const officeLocation = officeBearer.data.location;
@@ -57,6 +35,25 @@ const LocationSelector = ({
 
     // Return the filtered office bearers
     return filteredOfficeBearers;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+    console.log("Submit button clicked"); // Debugging line
+
+    try {
+      // Call the function to get office bearers data based on selected location
+      const filteredOfficeBearers = getOfficeBearersForSelectedLocation();
+      console.log("Filtered office bearers:", filteredOfficeBearers); // Debugging line
+
+      // You can use the filteredOfficeBearers for further processing here if needed.
+      await handleFormSubmit(filteredOfficeBearers);
+
+      // Reset the form or perform any other necessary actions after successful submission.
+    } catch (error) {
+      // Handle any errors here, e.g., show an error message to the user.
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
@@ -141,7 +138,7 @@ const LocationSelector = ({
             )}
         </select>
       </div>
-      
+
       {/* Submit button */}
       <button type="submit" className={styles.submitButton} onClick={handleSubmit}>
         Submit
