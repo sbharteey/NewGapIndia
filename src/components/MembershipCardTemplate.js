@@ -48,16 +48,26 @@ const MembershipCardTemplate = ({ mobile }) => {
 
   return (
     <div id="membershipCard" className={styles.card}>
-    <h2> GAP Membership Card</h2>
-    <p>Membership ID: {memberData._id}</p> {/* Display the membership ID */}
+    <h2> GAREEB AADMI PARTY</h2>
+    <h6>www.gapindia.org</h6>
+    <h5>56/12/2014/PPS-I</h5>
+    <div className={styles.p}>
+    <p>{memberData.gapId}</p>
     <p>Name: {memberData.name}</p>
     <p>Mobile: {memberData.mobile}</p>
-    <p>Email: {memberData.email}</p>
+    <p>State: {memberData.state}</p>
+    <p>Lok Sabha: {memberData.lokSabha}</p>
+    <p>Vidhan Sabha: {memberData.vidhanSabha}</p>
+    </div>
     <div className={styles.photo}>
       {/* Use the Image component for the member's photo */}
       <Image src={memberData.photo} alt="Member Photo" width={150} height={150} />
     </div>
+    <span>
+    <div className={styles.printCard}>
     <button onClick={() => window.print()}>Print Card</button>
+    </div>
+    </span>
     </div>
   );
 };
