@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from '../styles/membershipCardTemplate.module.css';
 import printStyles from '../styles/print.module.css';
 
+const upiQRCodeImage = '/images/GAPupiQrCode.png';
 const MembershipCardTemplate = ({ mobile }) => {
   const [memberData, setMemberData] = useState(null);
   useEffect(() => {
@@ -34,11 +35,6 @@ const MembershipCardTemplate = ({ mobile }) => {
         setMemberData(null);
       }
     };
-
-
-
-
-
     fetchData();
   }, [mobile]);
 
@@ -63,11 +59,18 @@ const MembershipCardTemplate = ({ mobile }) => {
       {/* Use the Image component for the member's photo */}
       <Image src={memberData.photo} alt="Member Photo" width={150} height={150} />
     </div>
-    <span>
+
+    <div className={styles.qrCodeContainer}>
+          <Image
+            src={upiQRCodeImage}
+            alt="UPI QR Code"
+            width={100} 
+            height={125} 
+          />
+        </div>
     <div className={styles.printCard}>
     <button onClick={() => window.print()}>Print Card</button>
     </div>
-    </span>
     </div>
   );
 };

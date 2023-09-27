@@ -14,11 +14,13 @@
 /* Specific styles for SearchBar */
 .subnavbar .searchBar {
   display: flex;
-  align-items: center;
+  position: relative;
   justify-content: center;
-  gap: 8px;
+  justify-items: auto;
+  align-items: center;
+  gap: 10px;
   background-color: #f0f0f0;
-  padding: 14px 20px; /* Padding increased here */
+  padding: 13px 40px;
   
   
 }
@@ -35,14 +37,3 @@
   font-size: 16px;
 }
 
-/* Specific styles for MembershipCardButton */
-.subnavbar .membershipCardButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #3244e7;
-  padding: 7px 10px;
-  border: none;
-  font-size: 16px;
-}

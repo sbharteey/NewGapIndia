@@ -65,14 +65,7 @@
     margin-left: 400px;
   }
 
-  .qrCode {
-    display: flex;
-    position: absolute;
-    bottom: 650px;
-    left: 155px;
-    
-    font-size: 19px;
-  }
+ 
   
   /* Responsive Styles */
   @media screen and (max-width: 600px) {

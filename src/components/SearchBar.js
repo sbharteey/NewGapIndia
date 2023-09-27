@@ -26,12 +26,10 @@ const SearchBar = () => {
           setSearchError('Member not found.');
         }
       } else {
-        console.error('Error searching for membership');
         setSearchError('');
         setSearchError('Error searching for membership.');
       }
     } catch (error) {
-      console.error('Error searching for membership:', error);
       setSearchError('');
       setSearchError('Error searching for membership.');
     }
@@ -41,7 +39,7 @@ const SearchBar = () => {
     <div className={styles.searchBar}>
       <input
         type="text"
-        placeholder="Search Membership"
+        placeholder="Srch MbrShip by Mobile"
         value={searchQuery}
         onChange={handleInputChange}
       />

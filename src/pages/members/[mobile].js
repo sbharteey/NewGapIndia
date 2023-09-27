@@ -9,7 +9,7 @@ const MemberCardPage = () => {
 
   // Use the mobile number to fetch member data
   // Fetch member data using the mobile number and display the card
-console.log({mobile});
+
   return (
     <Layout pageTitle="Membership Card">
       <MembershipCardTemplate mobile={mobile} /> {/* Pass the mobile as a prop */}

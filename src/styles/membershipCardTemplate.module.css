@@ -1,11 +1,18 @@
 /* src/styles/membershipCardTemplate.module.css */
 
 .card {
+  display: flexbox;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
   width: 275px;
   height: 430px;
   border: 2px solid #fbd605;
   padding: 20px;
-  margin: 20px auto;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 40px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -13,9 +20,10 @@
 
 .p {
   color: #ffffff;
-  text-align: center;
+  text-align: left;
   position: relative;
-  top: 50px;
+  right: 15px;
+  top: 75px;
   
 }
 
@@ -44,18 +52,18 @@
   font-weight: lighter;
   position: relative;
   top: 350px;
-  left: 90px;
+  left: 100px;
 }
 
 .photo {
   width: 150px;
   height: 150px;
   margin: 10px auto;
-  border: 2px solid #007bff;
+  border: 2px solid #ffaa00;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  bottom: 318px;
+  bottom: 305px;
 }
 
 .photo img {
@@ -65,19 +73,23 @@
 }
 
 .printCard {
-  display: block;
   position: relative;
-  bottom: 100px;
-  left: 300px;
-  background-color: #131313;
-  color: white;
-  border: none;
+  bottom: 185px;
   cursor: pointer;
-  transition: background-color 0.3s ease; 
-}
-
-.printCard:hover {
-  background-color: #080808;
+  justify-items: center;
+  
 }
 
 
+
+.qrCodeContainer img {
+  position: relative;
+  bottom: 290px;
+  left: 102px;
+  max-width: 100px;
+  max-height: 125px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  
+  
+}
