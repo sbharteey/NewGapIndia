@@ -9,8 +9,8 @@ try {
   // If the model doesn't exist, create it
   const membershipSchema = new mongoose.Schema({
     gapId: { type: String, unique: true }, // Ensure uniqueness for GAP ID
-    mobile: { type: String, unique: true }, // Ensure uniqueness for mobile numbers
     name: String,
+    mobile: { type: String, unique: true }, // Ensure uniqueness for mobile numbers
     country: String,
     state: String,
     lokSabha: String,

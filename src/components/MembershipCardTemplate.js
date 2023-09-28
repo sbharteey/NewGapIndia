@@ -48,6 +48,7 @@ const MembershipCardTemplate = ({ mobile }) => {
     <h6>www.gapindia.org</h6>
     <h5>56/12/2014/PPS-I</h5>
     <div className={styles.p}>
+    <p>ID: {memberData._id}</p>
     <p>{memberData.gapId}</p>
     <p>Name: {memberData.name}</p>
     <p>Mobile: {memberData.mobile}</p>

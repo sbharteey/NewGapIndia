@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import styles from "../styles/locationSelector.module.css";
+import Router from "next/router"; // Import Router from Next.js
 
 const LocationSelector = ({
   formData,
@@ -46,8 +48,15 @@ const LocationSelector = ({
       const filteredOfficeBearers = getOfficeBearersForSelectedLocation();
       console.log("Filtered office bearers:", filteredOfficeBearers); // Debugging line
 
+      // Extract the selected office bearer's ID from your form data
+      const selectedOfficeBearerId = formData.officeBearerId; // Replace with the actual field name or source
+
       // You can use the filteredOfficeBearers for further processing here if needed.
       await handleFormSubmit(filteredOfficeBearers);
+
+      // Navigate to the dynamic page using Link component
+      // This will navigate to /officeBearer/[id] with the selected ID
+      Router.push(`/officeBearer/${selectedOfficeBearerId}`);
 
       // Reset the form or perform any other necessary actions after successful submission.
     } catch (error) {
@@ -55,6 +64,9 @@ const LocationSelector = ({
       console.error('Error submitting form:', error);
     }
   };
+
+  // Define selectedOfficeBearerId here so it's in scope for the Link component
+  const selectedOfficeBearerId = formData.officeBearerId; // Replace with the actual field name or source
 
   return (
     <div className={styles.locationSelector}>
@@ -139,10 +151,13 @@ const LocationSelector = ({
         </select>
       </div>
 
-      {/* Submit button */}
-      <button type="submit" className={styles.submitButton} onClick={handleSubmit}>
-        Submit
-      </button>
+      {/* Link component moved here */}
+      <Link href={`/officeBearer/${selectedOfficeBearerId}`}>
+        <button type="submit" className={styles.submitButton} onClick={handleSubmit}>
+          Submit
+        </button>
+      </Link>
+
     </div>
   );
 };

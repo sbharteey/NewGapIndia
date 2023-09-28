@@ -8,12 +8,13 @@ import Alert from './Alert';
 import { useDropzone } from 'react-dropzone';
 import Image from 'next/image';
 import Compressor from 'compressorjs';
-
+import Membership from '../models/Membership';
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
   const [selectedPhotoName, setSelectedPhotoName] = useState("");
   const [alert, setAlert] = useState(null);
+  const [isPhotoRequired, setIsPhotoRequired] = useState(true);
 
   // Use the useAddMember mutation hook
   const addMemberMutation = useAddMember();
@@ -49,8 +50,12 @@ const MembershipForm = () => {
           console.error('Error compressing image:', err);
         },
       });
+
+      // Photo is uploaded, no longer required
+      setIsPhotoRequired(false);
     }
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -60,6 +65,14 @@ const MembershipForm = () => {
       setAlert({ message: 'Please use correct mobile number and be 10 digits long.', type: 'error' });
       return;
     }
+
+    // Check if the photo field is empty when it's required
+if (isPhotoRequired) {
+  console.log('Please upload your photo.'); // Add this console log
+  setAlert({ message: 'Please upload your photo.', type: 'error' });
+  return;
+}
+
 
     // Simulate a successful mobile uniqueness check
     const isMobileUnique = true;
@@ -71,7 +84,6 @@ const MembershipForm = () => {
 
     // Call the mutation with the form data
     try {
-
       console.log(formData);
       console.log("Sending this data to useAddMember");
       const response = await addMemberMutation.mutateAsync(formData);
@@ -85,6 +97,8 @@ const MembershipForm = () => {
         // Clear the form data, for example:
         setFormData(membershipDataStructure);
         setSelectedPhotoName('');
+        // Reset the photo requirement
+        setIsPhotoRequired(true);
       } else {
         // Handle other response data or errors if needed
         console.error('Error adding member:', response);
@@ -106,12 +120,10 @@ const MembershipForm = () => {
     <div>
       {/* Display the alert if it exists */}
       {alert && (
-        <div
-          className={`${styles.alert} ${alert.type === 'success' ? styles['alert-success'] : styles['alert-error']
-            }`}
-        >
-          {alert.message}
-        </div>
+      <div className={styles['alert-container']}>
+        <Alert message={alert.message} type={alert.type} />
+      </div>
+        
       )}
 
       <div className={styles.membershipFormContainer}>
@@ -240,6 +252,7 @@ const MembershipForm = () => {
               name="voterId"
               value={formData.voterId}
               onChange={handleInputChange}
+              required // Add the required attribute
             />
           </div>
 
@@ -255,6 +268,8 @@ const MembershipForm = () => {
               onChange={(e) => handlePhotoUpload(e.target.files[0])}
               className={styles.fileInput}
               {...getInputProps()}
+             // Add the "required" attribute conditionally
+      {...(isPhotoRequired ? { required: true } : {})} 
             />
             {/* Display the selected photo preview */}
             {formData.photo && (

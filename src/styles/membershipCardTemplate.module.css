@@ -23,7 +23,7 @@
   text-align: left;
   position: relative;
   right: 15px;
-  top: 75px;
+  top: 45px;
   
 }
 
@@ -56,14 +56,14 @@
 }
 
 .photo {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   margin: 10px auto;
   border: 2px solid #ffaa00;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  bottom: 305px;
+  bottom: 345px;
 }
 
 .photo img {
@@ -74,7 +74,7 @@
 
 .printCard {
   position: relative;
-  bottom: 185px;
+  bottom: 200px;
   cursor: pointer;
   justify-items: center;
   
@@ -84,7 +84,7 @@
 
 .qrCodeContainer img {
   position: relative;
-  bottom: 290px;
+  bottom: 305px;
   left: 102px;
   max-width: 100px;
   max-height: 125px;

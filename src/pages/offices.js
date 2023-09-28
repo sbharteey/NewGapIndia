@@ -107,6 +107,9 @@ const Offices = () => {
 
           <OfficeBearersList officeBearers={filteredOfficeBearers} />
         </div>
+
+
+
       </Layout>
     </div>
   );
