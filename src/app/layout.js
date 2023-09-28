@@ -8,6 +8,7 @@ import Subnavbar from '../components/Subnavbar'; // Import the Subnavbar compone
 import Footer from '../components/Footer';
 import layoutStyles from '../styles/layout.module.css';
 import '../styles/globals.css';
+import { Toaster } from 'react-hot-toast';
 
 
 const Layout = ({ children, pageTitle }) => {
@@ -18,12 +19,7 @@ const Layout = ({ children, pageTitle }) => {
   const router = useRouter();
   const isDonationPage = router.pathname === '/donation';
 
-  // Example member data (replace this with actual member data)
-  const memberData = {
-    name: 'John Doe',
-    mobileNumber: '1234567890',
-    // Other member data fields...
-  };
+  
 
   return (
     <div>
@@ -31,6 +27,7 @@ const Layout = ({ children, pageTitle }) => {
         <title>{pageTitle ? `${pageTitle} - ${websiteTitle}` : websiteTitle}</title>
         <meta name="description" content={websiteDescription} />
       </Head>
+      <Toaster />
       <Header />
       <Navbar />
       <Subnavbar /> {/* Include the Subnavbar component */}

@@ -4,21 +4,35 @@ import { useAddMember } from '../../membershipQueries';
 import membershipDataStructure from '../../utils/membershipDataStructure';
 import membershipData from '../data/membershipData';
 import styles from '../styles/membershipForm.module.css';
-import Alert from './Alert';
 import { useDropzone } from 'react-dropzone';
 import Image from 'next/image';
 import Compressor from 'compressorjs';
-import Membership from '../models/Membership';
+import { toast } from 'react-hot-toast';
+import axios from 'axios';
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
   const [selectedPhotoName, setSelectedPhotoName] = useState("");
-  const [alert, setAlert] = useState(null);
   const [isPhotoRequired, setIsPhotoRequired] = useState(true);
+  const [mobileUniqueError, setMobileUniqueError] = useState(false);
+  const handleMobileBlur = async () => {
+    // Make a GET request to check mobile number uniqueness
+    try {
+      const response = await axios.get(`/api/checkMobileUnique?mobile=${formData.mobile}`);
+      const { isUnique } = response.data;
 
+      if (!isUnique) {
+        // Mobile number is not unique, set an error
+        setMobileUniqueError(true);
+      } else {
+        // Mobile number is unique, clear any previous error
+        setMobileUniqueError(false);
+      }
+    } catch (error) {
+    }
+  };
   // Use the useAddMember mutation hook
   const addMemberMutation = useAddMember();
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
@@ -26,7 +40,6 @@ const MembershipForm = () => {
       [name]: value,
     }));
   };
-
   const handlePhotoChange = (acceptedFiles) => {
     if (acceptedFiles.length > 0) {
       const photoFile = acceptedFiles[0];
@@ -47,7 +60,6 @@ const MembershipForm = () => {
           reader.readAsDataURL(result);
         },
         error(err) {
-          console.error('Error compressing image:', err);
         },
       });
 
@@ -56,42 +68,40 @@ const MembershipForm = () => {
     }
   };
 
+  // Define an object to store unique mobile numbers
+  const uniqueMobileNumbers = {};
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Additional mobile number validation
     const firstDigit = formData.mobile.charAt(0);
     if (!['6', '7', '8', '9'].includes(firstDigit) || formData.mobile.length !== 10) {
-      setAlert({ message: 'Please use correct mobile number and be 10 digits long.', type: 'error' });
+      toast.error('Please use a correct mobile number with 10 digits.'); // Use toast for error message
       return;
     }
 
     // Check if the photo field is empty when it's required
-if (isPhotoRequired) {
-  console.log('Please upload your photo.'); // Add this console log
-  setAlert({ message: 'Please upload your photo.', type: 'error' });
-  return;
-}
-
-
-    // Simulate a successful mobile uniqueness check
-    const isMobileUnique = true;
-
-    if (!isMobileUnique) {
-      setAlert({ message: 'Mobile number already exists.', type: 'error' });
+    if (isPhotoRequired) {
+      toast.error('Please upload your photo.'); // Use toast for error message
       return;
     }
 
+    // Check if the mobile number is already used
+    if (uniqueMobileNumbers[formData.mobile]) {
+      toast.error('Mobile number already exists.'); // Use toast for error message
+      return;
+    }
+    // Mark the mobile number as used
+    uniqueMobileNumbers[formData.mobile] = true;
+
     // Call the mutation with the form data
     try {
-      console.log(formData);
-      console.log("Sending this data to useAddMember");
       const response = await addMemberMutation.mutateAsync(formData);
 
       // Handle the success case
       if (response.message) {
         // Member added successfully
-        setAlert({ message: response.message, type: 'success' });
+        toast.success(response.message); // Use toast for success message
 
         // Optionally, you can clear the form or perform other actions after a successful submission.
         // Clear the form data, for example:
@@ -101,34 +111,21 @@ if (isPhotoRequired) {
         setIsPhotoRequired(true);
       } else {
         // Handle other response data or errors if needed
-        console.error('Error adding member:', response);
-        setAlert({ message: 'Error adding member.', type: 'error' });
+        toast.error('Error adding member.'); // Use toast for error message
       }
     } catch (error) {
       // Handle network errors or other exceptions
-      console.error('Error adding member:', error.message);
-      setAlert({ message: error.message, type: 'error' });
+      toast.error('Error adding member.'); // Use toast for error message
     }
   };
-
   const { getRootProps, getInputProps } = useDropzone({
     accept: '.jpg, .jpeg, .png',
     onDrop: handlePhotoChange,
   });
-
   return (
     <div>
-      {/* Display the alert if it exists */}
-      {alert && (
-      <div className={styles['alert-container']}>
-        <Alert message={alert.message} type={alert.type} />
-      </div>
-        
-      )}
-
       <div className={styles.membershipFormContainer}>
         <h1>Membership Form</h1>
-
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="name">
@@ -143,10 +140,9 @@ if (isPhotoRequired) {
               onChange={handleInputChange}
               required
               minLength="3" // Minimum name length
-              maxLength="30" // Maximum name length
+              maxLength="20" // Maximum name length
             />
           </div>
-
           <div className={styles.formGroup}>
             <label htmlFor="mobile">
               Mobile No. <span className={styles.required}>*</span>
@@ -158,10 +154,15 @@ if (isPhotoRequired) {
               placeholder="ID Card will be sent if No. in WhatsApp"
               value={formData.mobile}
               onChange={handleInputChange}
+              onBlur={handleMobileBlur} // Add this onBlur event handler
               required
             />
+            {mobileUniqueError && (
+              <div className={`${styles.error} ${styles.mobileError}`}>
+                Mobile number already exists. Please use a different mobile number.
+              </div>
+            )}
           </div>
-
           <div className={styles.formGroup}>
             <label htmlFor="country">
               Country <span className={styles.required}>*</span>
@@ -177,7 +178,6 @@ if (isPhotoRequired) {
               {/* Add other countries here */}
             </select>
           </div>
-
           <div className={styles.formGroup}>
             <label htmlFor="state">
               State <span className={styles.required}>*</span>
@@ -197,7 +197,6 @@ if (isPhotoRequired) {
               ))}
             </select>
           </div>
-
           <div className={styles.formGroup}>
             <label htmlFor="lokSabha">
               Lok Sabha <span className={styles.required}>*</span>
@@ -239,13 +238,11 @@ if (isPhotoRequired) {
                     </option>
                   )
                 )}
-
-
             </select>
           </div>
-
           <div className={styles.formGroup}>
-            <label htmlFor="voterId">Voter ID</label>
+            <label htmlFor="voterId"></label>
+            Voter ID <span className={styles.required}>*</span>
             <input
               type="text"
               id="voterId"
@@ -255,7 +252,6 @@ if (isPhotoRequired) {
               required // Add the required attribute
             />
           </div>
-
           <div className={`${styles.formGroup} ${styles.dropzone}`} {...getRootProps()}>
             <label htmlFor="photo" className={styles.fileInputLabel}>
               Member Photo (JPG/PNG)
@@ -268,8 +264,6 @@ if (isPhotoRequired) {
               onChange={(e) => handlePhotoUpload(e.target.files[0])}
               className={styles.fileInput}
               {...getInputProps()}
-             // Add the "required" attribute conditionally
-      {...(isPhotoRequired ? { required: true } : {})} 
             />
             {/* Display the selected photo preview */}
             {formData.photo && (
@@ -284,7 +278,6 @@ if (isPhotoRequired) {
             )}
             <p>Upload your small Passport size Photo so that Photo ID card will look beautiful.</p>
           </div>
-
           <button type="submit" className={styles.submitButton}>
             Submit
           </button>
@@ -293,5 +286,4 @@ if (isPhotoRequired) {
     </div>
   );
 };
-
 export default MembershipForm;

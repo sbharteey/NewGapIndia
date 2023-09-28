@@ -8,7 +8,32 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
 }
+/* Add this CSS to your global styles or a CSS file */
+/* Increase the size of error toasts */
+.react-hot-toast-error {
+  width: 300px; /* Adjust the width as needed */
+  padding: 16px; /* Adjust the padding as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+}
 
+/* Increase the size of success toasts */
+.react-hot-toast-success {
+  width: 300px; /* Adjust the width as needed */
+  padding: 16px; /* Adjust the padding as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+}
 
+/* Define the error class for displaying error messages */
+.error {
+  color: red; /* Set the text color to red */
+  font-size: 14px; /* Adjust the font size as needed */
+  margin-top: 8px; /* Add margin to separate error messages from input fields */
+  word-wrap: break-word; /* Add this property to enable text wrapping */
+}
+
+/* Optionally, you can style error messages differently for specific elements */
+.error.mobile-error {
+  font-weight: bold; /* Make mobile number errors bold */
+}
 
 
