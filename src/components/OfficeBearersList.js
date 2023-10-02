@@ -7,7 +7,7 @@ import styles from '../styles/officeBearersList.module.css';
 const OfficeBearersList = ({ officeBearers }) => {
   return (
     <div className={styles.officeBearersList}>
-      <h2>Office Bearers</h2>
+      <h2>All India Location-wise Office Bearers</h2>
       <ul>
         {officeBearers.map((officeBearer) => (
           <li key={officeBearer.title} className={styles.officeBearer}>

@@ -96,13 +96,14 @@ const MembershipForm = () => {
 
     // Call the mutation with the form data
     try {
+      console.log("Try0");
       const response = await addMemberMutation.mutateAsync(formData);
-
+console.log("Try1");
       // Handle the success case
       if (response.message) {
         // Member added successfully
         toast.success(response.message); // Use toast for success message
-
+console.log("inside if");
         // Optionally, you can clear the form or perform other actions after a successful submission.
         // Clear the form data, for example:
         setFormData(membershipDataStructure);
@@ -110,12 +111,15 @@ const MembershipForm = () => {
         // Reset the photo requirement
         setIsPhotoRequired(true);
       } else {
+        console.log(response.error);
+        console.log("I go to else");
         // Handle other response data or errors if needed
-        toast.error('Error adding member.'); // Use toast for error message
+        toast.error(response.error); // Use toast for error message
       }
     } catch (error) {
+      console.log("there was some erorrrr");
       // Handle network errors or other exceptions
-      toast.error('Error adding member.'); // Use toast for error message
+      toast.error('Error adding member.catch'); // Use toast for error message
     }
   };
   const { getRootProps, getInputProps } = useDropzone({

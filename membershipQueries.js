@@ -34,8 +34,18 @@ console.log(JSON.stringify(newMemberData));
         return data;
       } else {
         const errorData = await response.json();
-        console.log("now I will throw my error");
-        throw new Error(errorData.error);
+        
+        console.log(errorData.error);
+        if(errorData.error=="Mobile number already exists.")
+        {
+          console.log("Now I will return errorData");
+          return errorData;
+        }
+        else{
+          console.log("now I will throw my error:");
+          throw new Error(errorData.error);
+        }
+        
       }
     } catch (error) {
       throw error;

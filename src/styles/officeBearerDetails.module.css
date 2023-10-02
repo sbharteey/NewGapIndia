@@ -1,58 +1,43 @@
 /* officeBearerDetails.module.css */
 
-/* Style for the entire page container */
-.officeContainer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Style for the "Return" link */
-  .returnLink {
-    display: flexbox;
-    background-color: #0070f3;
-    color: white;
-    position: relative;
-    left: 3px;
-    top: 1px;
-    margin-bottom: 4px;
-    padding: 10px;
-    width: 250px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  .returnLink:hover {
-    background-color: #0a51a3;
-    cursor: pointer;
-  }
-  
-  /* Style for the office bearer details */
-  .h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  /* Style for the office bearer's photo container */
-  .photoContainer {
-    margin-top: 20px;
-  }
-  
-  /* Style for the office bearer's photo */
-  .photo {
-    border-radius: 50%;
-  }
-  
+.officeBearerDetails {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.detailsHeader {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.locationInfo {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.officebearersList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.officebearerItem {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.returnLink {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #0070f3; /* Adjust the color as needed */
+  cursor: pointer;
+}
+
+.return-link:hover {
+  text-decoration: underline;
+}
