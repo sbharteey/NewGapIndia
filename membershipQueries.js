@@ -53,27 +53,10 @@ console.log(JSON.stringify(newMemberData));
   });
 }
 
-// Mutation to update a member
-export function useUpdateMember() {
-  return useMutation(async (updatedMemberData) => {
-    const response = await fetch('/api/member', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedMemberData),
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to update the member');
-    }
-  });
-}
-
 // Mutation to delete a member
 export function useDeleteMember() {
-  return useMutation(async (memberId) => {
-    const response = await fetch(`/api/member?id=${memberId}`, {
+  return useMutation(async (mobile) => { // Change parameter to 'mobile'
+    const response = await fetch(`/api/member?mobile=${mobile}`, { // Use 'mobile' in the query parameter
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -82,6 +65,27 @@ export function useDeleteMember() {
 
     if (!response.ok) {
       throw new Error('Failed to delete the member');
+    }
+  });
+}
+
+// Mutation to update a member by mobile number
+export function useUpdateMemberByMobile() {
+  return useMutation(async ({ mobile, updatedData }) => {
+    try {
+      const response = await fetch(`/api/member?mobile=${mobile}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update the member');
+      }
+    } catch (error) {
+      throw error;
     }
   });
 }

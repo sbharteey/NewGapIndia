@@ -112,14 +112,40 @@ console.log(photo);
     } catch (error) {
       res.status(500).json({ error: 'Failed to update a member.' });
     }
+
+  } else if (req.method === 'PATCH') {
+    try {
+      const { mobile } = req.query; // Get the mobile number from query parameters
+      const updatedData = req.body; // Updated member data
+
+      // Search for a member by mobile number and update their data
+      const updatedMember = await Membership.findOneAndUpdate(
+        { mobile },
+        updatedData,
+        { new: true } // To return the updated document
+      );
+
+      if (!updatedMember) {
+        return res.status(404).json({ error: 'Member not found.' });
+      }
+
+      res.status(200).json({ message: 'Member updated successfully.' });
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to update a member.' });
+    }
+
+
   } else if (req.method === 'DELETE') {
     try {
-      // DELETE request handling code
-      // Delete the first member found in the database
-      const deletedMember = await Membership.findOneAndDelete({});
+      const { mobile } = req.query; // Get the mobile number from query parameters
+
+      // Delete the member with the specified mobile number
+      const deletedMember = await Membership.findOneAndDelete({ mobile });
+
       if (!deletedMember) {
-        return res.status(404).json({ error: 'No members found.' });
+        return res.status(404).json({ error: 'Member not found.' });
       }
+
       res.status(200).json({ message: 'Member deleted successfully.' });
     } catch (error) {
       res.status(500).json({ error: 'Failed to delete a member.' });
