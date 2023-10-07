@@ -20,7 +20,6 @@ console.log("credentials loaded");
       ],
   });
 
-
   const doc = new GoogleSpreadsheet(`${process.env.SHEET_ID}`, serviceAccountAuth);
 
    // const doc = new GoogleSpreadsheet(`${process.env.SHEET_ID}`); // Replace 'YOUR_SPREADSHEET_ID' with your actual Google Sheet ID
