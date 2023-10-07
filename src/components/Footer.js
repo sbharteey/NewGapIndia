@@ -28,11 +28,11 @@ const Footer = () => {
           <Image src="/images/telegram.png" alt="Telegram" width={32} height={32} />
         </a>
       </div>
-
+<div>
       <p className={styles.copyRight}>Contact Us :- 9599076349, Email :- gapindia.org@gmail.com </p>
-
       <p className={styles.copyRight}>Regd. Office :- R-21, Mohan Garden, New Delhi - 110059</p>
       <p className={styles.copyRight}>© 2023 Gareeb Aadmi Party. All rights reserved.</p>
+      </div>
     </footer>
   );
 };

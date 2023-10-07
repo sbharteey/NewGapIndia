@@ -2,38 +2,43 @@
 
 /* Container styles for the Subnavbar */
 .subnavbar {
+  height: 60px;
+  width: 100%;
   display: flex;
-  align-items: center; /* Vertically center items */
-  justify-content: center; /* Horizontally center items */
-  gap: 20px; /* Adjust the gap between components */
-  background-color: #f0f0f0;
-  padding: 1px; /* Add padding as needed */
-  margin-top: 2px;
+  align-items: center;
+  justify-content: center;
+  background-color: #2c2727;
+  color: rgb(255, 255, 255);
+  margin-bottom: .3vh;
+  gap: 2vw;
 }
 
 /* Specific styles for SearchBar */
 .subnavbar .searchBar {
   display: flex;
-  position: relative;
   justify-content: center;
-  justify-items: auto;
-  align-items: center;
-  gap: 10px;
-  background-color: #f0f0f0;
-  padding: 13px 40px;
+  align-content: center;
+
+  height: 3vh;
+  gap: .5vw;
+  
   
   
 }
 
 /* Specific styles for DonateButton */
 .subnavbar .donateButton {
-  display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   border: none;
   background-color: #ef0505;
-  padding: 7px 16px;
-  font-size: 16px;
+  padding: .5vh 1.5vw;
+  font-size: 1.2vw;
+  cursor: pointer;
+
 }
 
+.subnavbar .donateButton :hover {
+  color: #0b4b45 !important;
+}

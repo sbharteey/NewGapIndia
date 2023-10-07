@@ -1,42 +1,41 @@
 /* navbar.module.css */
 
 .navbar {
+  height: 60px;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background-color: #2c2727;
   font-style: normal;
   color: rgb(251, 250, 254);
-  padding: 16px;
-  text-decoration: none;
+  margin-top: .3vh;
+  margin-bottom: .3vh;
+  
 }
 
 .navList {
-  list-style: none;
   display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
+  gap: 4vw;
+  
 }
 
 .navItem {
-  display: flex;
-  font-size: 20px;
+  font-size: 1.3vw;
   cursor: pointer;
-  color: white !important;
+  text-decoration: none;
 }
 
 .navItem a {
-  display: flex;
   text-decoration: none; /* Remove text decoration for the link */
   color: rgb(249, 248, 251);
 }
 
 .navItem:hover {
-  color: #ffc107 !important;
+  color: #ee4c07 !important;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 550px) {
   .navList {
     flex-direction: column;
     gap: 10px;

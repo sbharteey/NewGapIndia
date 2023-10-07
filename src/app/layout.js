@@ -26,6 +26,9 @@ const Layout = ({ children, pageTitle }) => {
       <Head>
         <title>{pageTitle ? `${pageTitle} - ${websiteTitle}` : websiteTitle}</title>
         <meta name="description" content={websiteDescription} />
+        <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
       </Head>
       <Toaster />
       <Header />
@@ -33,10 +36,10 @@ const Layout = ({ children, pageTitle }) => {
       <Subnavbar /> {/* Include the Subnavbar component */}
       <div className={layoutStyles.contentContainer}>
         <div className={layoutStyles.buttonContainer}>
-          
+        
         </div>
       </div>
-      <main>{children}</main>
+      <main className={layoutStyles.main}>{children}</main>
       <Footer />
     </div>
   );

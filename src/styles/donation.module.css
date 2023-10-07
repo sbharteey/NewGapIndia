@@ -1,46 +1,41 @@
 /* donation.module.css */
-
+.main {
+  width: 10%;
+  height: 100%;
+}
 .donationContainer {
-    max-width: 800px;
+
+  position: relative;
+    width: 60%;
     margin: 0 auto;
     padding: 20px;
   }
   
   .donationContainer h1 {
-    display: flex;
-    justify-content: center;
+  
     font-weight: lighter;
     margin-bottom: 20px;
   }
   
   .donationContainer p {
-    display: flex;
-    position: relative;
-    font-size: 16px;
-    line-height: 1px;
-    margin-bottom: 4px;
-    margin-top: 40px;
-    margin-left: 25px;
+  font-size: 20vh;
   
   }
   
   .paymentDetails {
-    margin-bottom: 80px;
-    margin-top: 60px;
+    
     font-weight: lighter;
   }
   
   .paymentDetails h2 {
     font-size: 20px;
-    margin-bottom: 10px;
     font-weight: lighter;
-    margin-left: -18px;
+    
   }
   
   .paymentDetails p {
     font-size: 18px;
-    margin-bottom: 8px;
-    margin-left: -20px;
+  
   
   }
   
@@ -49,26 +44,26 @@
   }
   
   .qrCodeContainer h2 {
-    display: flex;
     font-size: 20px;
-    margin-bottom: 10px;
-    position: relative;
   }
   
   .qrCodeContainer img {
-    display: flex;
-    position: relative;
+    
+  
     max-width: 200px;
     border: 2px solid #333;
     border-radius: 8px;
-    margin-top: -240px;
-    margin-left: 400px;
   }
-
+.content h1 {
+font-size: 30px;
+}
  
+.content p {
+  font-size: 1.2vh;
+  }
   
   /* Responsive Styles */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 400px) {
     .donationContainer {
       padding: 10px;
     }

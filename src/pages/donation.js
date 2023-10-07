@@ -14,11 +14,13 @@ const DonationPage = () => {
   return (
     <Layout pageTitle="Donation">
       <div className={styles.donationContainer}>
-        <h1>देश बदलने के लिए गरीब आदमी पार्टी को सहयोग करें </h1>
+        <div className={styles.content}>
+        <h1>देश बदलने के लिए गरीब आदमी पार्टी को सहयोग करें</h1>
         <p>
           हमें आपके सहयोग की अत्यंत आवश्यकता है, आपके सहयोग के बिना इस देश को बदलने का ख्वाब अधूरा ही रह जायेगा 
         </p>
         <p>देश का हर व्यक्ति कम से कम 21 रुपये का सहयोग अवश्य करे आपका 21 रुपया हम लाखों में लौटाकर आपको देंगे ये हमारा वादा  है</p>
+        </div>
         <div className={styles.paymentDetails}>
           <h2>Bank Account Details:</h2>
           <p>Account Number: {bankAccountDetails.accountNumber}</p>

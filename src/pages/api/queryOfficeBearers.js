@@ -37,27 +37,6 @@ console.log("loadInfo done");
 console.log('Query parameters:', req.query);
 
 
-
-
-
-/*
-    // Define a function to filter rows based on the selected location
-    const filterOfficeBearersByLocation = (location) => {
-      return rows.filter((row) => {
-        //console.log(row._rawData[0]);
-        // Modify these conditions to match your Google Sheet columns and location data
-        return (
-          row._rawData[0] === location.country &&
-          (row._rawData[1] === location.state ? true:true)&&
-          (row._rawData[2] === location.lokSabha ? true:true)&&
-          (row._rawData[3] === location.vidhanSabha ? true:true)&&
-          (row._rawData[25] === "TRUE")
-        );
-      });
-    };
-*/
-
-
 const filterOfficeBearersByLocation = (location) => {
   return rows.filter((row) => {
     if (location.vidhanSabha !== "Not Specified") {
@@ -71,10 +50,6 @@ const filterOfficeBearersByLocation = (location) => {
     }
   });
 };
-
-
-
-
 
 
     // Parse the selected location from the query parameters
