@@ -16,7 +16,7 @@ async function fetchVisionDataFromGoogleDocs() {
     scopes: ['https://www.googleapis.com/auth/documents.readonly'], // Specify the appropriate scope for reading Google Docs
   });
 
-  const documentId = '1MCymb58rChNFDBNWT4SEmz-Qui74w6ui0pf-99R2NbM'; // Replace with your actual Google Docs document ID
+  const documentId = process.env.DOCS_ID_VISION; // Replace with your actual Google Docs document ID
 
   // Create a Google Docs API instance
   const docs = google.docs({ version: 'v1', auth: serviceAccountAuth });

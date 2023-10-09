@@ -1,24 +1,29 @@
 /* officeBearerDetails.module.css */
-
 .officeBearerDetails {
-  margin: 20px;
-  padding: 20px;
+  display: flexbox;
+  position: relative;
+  margin: 2rem;
+  padding: 2rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: .5rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .detailsHeader {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.notFound {
+  font-size: 1.4rem;
 }
 
 .locationInfo {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .officebearersList {
+  font-size: 2rem;
   list-style-type: none;
   padding: 0;
 }
@@ -30,14 +35,19 @@
   padding: 10px;
 }
 
-.returnLink {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 16px;
-  color: #0070f3; /* Adjust the color as needed */
+.buttonLink {
+  display: inline-block;
+  padding: .8rem 1.2rem;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 2rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.return-link:hover {
-  text-decoration: underline;
+.buttonLink:hover {
+  background-color: #0056b3;
 }

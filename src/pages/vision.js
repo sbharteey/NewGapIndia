@@ -1,9 +1,11 @@
+// src/pages/vision.js
 import React, { useEffect, useState } from 'react';
-import Layout from '../app/layout';
+import Layout from '../layout';
 import styles from '../styles/vision.module.css';
 
 const Vision = () => {
   const [content, setContent] = useState('');
+  const [title, setTitle] = useState('');
 
   useEffect(() => {
     // Fetch content from the API route when the component mounts
@@ -14,6 +16,7 @@ const Vision = () => {
         if (response.ok) {
           const data = await response.json();
           setContent(data.content);
+          setTitle(data.title);
         } else {
           console.log("else");
           console.error('Error fetching Google Docs content:', response.statusText);
@@ -32,8 +35,13 @@ const Vision = () => {
   return (
     <Layout pageTitle="Vision">
       <div className={styles.container}>
-        <h1>Vision</h1>
-        <p>{content}</p>
+        <h1>Vision of GAP</h1>
+        <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
+        <p>{
+        //content
+        }
+        </p>
+        
       </div>
     </Layout>
   );

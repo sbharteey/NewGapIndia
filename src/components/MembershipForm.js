@@ -9,7 +9,6 @@ import Image from 'next/image';
 import Compressor from 'compressorjs';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
-
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
   const [selectedPhotoName, setSelectedPhotoName] = useState("");

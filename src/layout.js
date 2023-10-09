@@ -1,14 +1,14 @@
-// src/app/layout.js
+// src/layout.js
 import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Header from '../components/Header';
-import Navbar from '../components/Navbar';
-import Subnavbar from '../components/Subnavbar';
-import Footer from '../components/Footer';
-import layoutStyles from '../styles/layout.module.css';
-import '../styles/globals.css';
-import CustomToaster from '../components/Toaster';
+import Header from '../src/components/Header';
+import Navbar from '../src/components/Navbar';
+import Subnavbar from '../src/components/Subnavbar';
+import Footer from '../src/components/Footer';
+import layoutStyles from '../src/styles/layout.module.css';
+import '../src/styles/globals.css';
+import CustomToaster from '../src/components/Toaster';
 
 const Layout = ({ children, pageTitle }) => {
   const websiteTitle = 'Gareeb Aadmi Party';

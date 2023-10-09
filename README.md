@@ -1,5 +1,11 @@
 PATCH method updated
 src/pages/api/updateMemberPhoto.js = Done
+vision and manifesto google docs done
+otp twilio failed not done project has error
+
+The error you're encountering, "ReactServerComponentsError," is related to the usage of next/router inside a Server Component in your layout.js file. The error message suggests using next/navigation instead.
+
+layout.js move fron app to src folder done all changes
 
 shyambharteey@Sb-Mac-Mini ~ % ipconfig getifaddr en1
 192.168.1.6

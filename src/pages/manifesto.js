@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Layout from '../app/layout';
+import Layout from '../layout';
 import styles from '../styles/manifesto.module.css';
 
 const Manifesto = () => {
@@ -32,8 +32,8 @@ const Manifesto = () => {
   return (
     <Layout pageTitle="Manifesto">
       <div className={styles.container}>
-        <h1>Manifesto</h1>
-        <p>{content}</p>
+        <h1></h1>
+        <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </Layout>
   );

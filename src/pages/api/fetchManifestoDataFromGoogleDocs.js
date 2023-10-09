@@ -1,7 +1,6 @@
+//src/pages/api/fetchManifestoDataFromGoogleDocs.js
 import { google } from 'googleapis';
 import { JWT } from 'google-auth-library';
-
-
 
 // Function to fetch content from Google Docs
 async function fetchManifestoDataFromGoogleDocs() {
@@ -16,12 +15,11 @@ async function fetchManifestoDataFromGoogleDocs() {
     scopes: ['https://www.googleapis.com/auth/documents.readonly'], // Specify the appropriate scope for reading Google Docs
   });
 
-  const documentId = '12q1A8rL-Xtbp9CNfnfgbEVZmnL9c15n2R1CKEz1KDPs'; // Replace with your actual Google Docs document ID
+  const documentId = process.env.DOCS_ID_MANIFESTO;  // Replace with your actual Google Docs document ID
 
   // Create a Google Docs API instance
   const docs = google.docs({ version: 'v1', auth: serviceAccountAuth });
 
-  
   try {
     // Get the content of the Google Docs document
     const response = await docs.documents.get({ documentId });
@@ -49,7 +47,3 @@ async function fetchManifestoDataFromGoogleDocs() {
 }
 
 module.exports = { fetchManifestoDataFromGoogleDocs };
-
-
-
-

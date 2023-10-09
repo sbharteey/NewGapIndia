@@ -1,7 +1,7 @@
 // src/pages/offices.js
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../app/layout';
+import Layout from '../layout';
 import LocationSelector from '../components/LocationSelector';
 import styles from '../styles/offices.module.css';
 import officesData from '../data/officesLocationData'; // Import your offices data

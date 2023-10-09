@@ -1,9 +1,18 @@
 /* styles/vision.module.css */
 
 .container {
-    margin: 2rem auto;
-    max-width: 800px;
-    padding: 0 1rem;
+  display: list-item;
+  position: relative;
+    max-width: 100%;
+    max-height: min-content;
+    margin: 2rem;
+    font-size: 1.20rem;
+    overflow-wrap: normal;
+  }
+
+  .google-docs-content {
+    display: list-item;
+    font-size: 1.2rem;
   }
   
   .container h1 {

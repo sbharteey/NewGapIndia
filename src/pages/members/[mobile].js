@@ -1,7 +1,7 @@
 // src/pages/members/[mobile].js
 import { useRouter } from 'next/router';
 import MembershipCardTemplate from '../../components/MembershipCardTemplate';
-import Layout from '../../app/layout';
+import Layout from '../../layout';
 
 const MemberCardPage = () => {
   const router = useRouter();

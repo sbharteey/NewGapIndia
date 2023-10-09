@@ -1,18 +1,27 @@
 /* manifesto.module.css */
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  display: list-item;
+  position: relative;
+    max-width: 100%;
+    max-height: min-content;
+    margin: 2rem;
+    font-size: 1.20rem;
+    overflow-wrap: normal;
+  }
+
+  .google-docs-content {
+    display: list-item;
+    font-size: 1.2rem;
   }
   
   .h1 {
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 20px;
   }
   
   .p {
-    font-size: 16px;
+    font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 20px;
   }

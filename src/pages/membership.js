@@ -1,7 +1,7 @@
 // src/pages/membership.js
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../app/layout';
+import Layout from '../layout';
 import MembershipForm from '../components/MembershipForm';
 import styles from '../styles/membership.module.css';
 const MembershipPage = () => {
