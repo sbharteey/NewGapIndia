@@ -39,7 +39,7 @@ const SearchBar = () => {
     <div className={styles.searchBar}>
       <input
         type="text"
-        placeholder="Srch MbrShip by Mobile"
+        placeholder="Search Member Ship by Mobile"
         value={searchQuery}
         onChange={handleInputChange}
       />

@@ -1,12 +1,20 @@
 /* manifesto.module.css */
-
+.main {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 350px);
+}
 .container {
   display: list-item;
   position: relative;
-    max-width: 100%;
-    max-height: min-content;
-    margin: 2rem;
-    font-size: 1.20rem;
+  justify-content: center;
+  align-items: center;
+    max-width: 80%;
+    max-height: fit-content;
+    margin: auto;
+    font-size: 2rem;
+    line-height: 2;
+    word-spacing: .25rem;
     overflow-wrap: normal;
   }
 

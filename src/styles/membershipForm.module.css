@@ -5,33 +5,29 @@
   position: relative;
   justify-items: center;
   justify-content: center;
-  max-width: 300px;
+  max-width: 100%;
   height: auto;
   margin: auto;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 30px;
-  padding-bottom: 8px;
-  padding-top: 0px;
-  border: 2px solid #ddd;
+  padding: 10px 10px;
+  border: 2px solid #ffffff;
   border-radius: 4px;
+  object-fit: cover;
 }
 
 .membershipFormContainer h1 {
   text-align: center;
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .formGroup label {
   display: block;
   font-weight: lighter;
-  margin-bottom: 4px;
+  margin-bottom: .2rem;
 }
 
 .formGroup label.required::after {
@@ -41,12 +37,10 @@
 }
 
 .formGroup input[type="text"],
-.formGroup input[type="email"],
 .formGroup input[type="tel"],
-.formGroup input[type="date"],
 .formGroup textarea {
-  width: 92%;
-  padding: 10px;
+  width: 100%;
+  padding: .8rem;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
@@ -91,6 +85,7 @@
   display: inline-block;
   margin-bottom: 10px;
   font-weight: lighter;
+  font-size: 1.2rem;
 }
 
 /* Hide the default file input appearance */

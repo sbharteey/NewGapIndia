@@ -1,4 +1,3 @@
-// src/pages/index.js
 import React, { useEffect, useState } from 'react';
 import Layout from '../layout';
 import styles from '../styles/index.module.css';
@@ -9,9 +8,9 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch content from the API route when the component mounts
-    const fetchGoogleSlideContent = async () => {
+    const fetchGoogleDocsContent = async () => {
       try {
-        const response = await fetch('/api/fetchIndexData');
+        const response = await fetch('/api/fetchVisionData');
 
         if (response.ok) {
           const data = await response.json();
@@ -28,23 +27,20 @@ const Home = () => {
       }
     };
 
-    fetchGoogleSlideContent();
-
+    fetchGoogleDocsContent();
   }, []);
 
   return (
-    <Layout pageTitle="Home">
-      <div className={styles.container}>
-        <h1>Home Page</h1>
-        <div className={styles.googleslides}/>
-        {content.slides && content.slides.slides.map((slide, index) => (
-    <div key={index}>
-      {/* Render slide content here */}
-      <h2>{slide.title}</h2>
-      {/* Render other slide content as needed */}
-    </div>
-  ))}
-        
+    <Layout pageTitle="Vision">
+      <div className={`${styles.container} ${styles.main}`}>
+      <img src="/images/sb small.png" alt="Image Description" className={styles.image} />
+
+        <h1 className={styles.h1}>Welcome to GAP</h1>
+        <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
+        <p>{
+        //content
+        }
+        </p>
       </div>
     </Layout>
   );

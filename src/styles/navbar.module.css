@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: center;
   background-color: #2c2727;
-  font-style: normal;
   color: rgb(251, 250, 254);
   margin-top: .3vh;
   margin-bottom: .3vh;
@@ -17,11 +16,12 @@
 .navList {
   display: flex;
   gap: 4vw;
+  list-style: none;
   
 }
 
 .navItem {
-  font-size: 1.3vw;
+  font-size: 1.5rem;
   cursor: pointer;
   text-decoration: none;
 }

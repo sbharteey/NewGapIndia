@@ -31,7 +31,7 @@ const Manifesto = () => {
 
   return (
     <Layout pageTitle="Manifesto">
-      <div className={styles.container}>
+      <div className={`${styles.container} ${styles.main}`}>
         <h1></h1>
         <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
       </div>

@@ -3,14 +3,13 @@
   height: 150px;
   width: 100%;
   display: flex;
-  position: relative;
+  position: fixed;
   align-items: center;
   justify-content: center;
   gap: 2vw;
   background-color: #2c2727;
   color: rgb(255, 255, 255);
-  margin-top: .3vh;
-  margin-bottom: .3vh;
+  margin-top: 1rem;
   }
   
   .socialIcons img {
@@ -19,6 +18,18 @@
   }
 
   .copyRight {
-    font-size: 1.1vw;
+    font-size: 1.5rem;
   }
-  
+  @media (max-width: 768px) {
+    .footer {
+      height: 300px;
+      width: 100%;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      background-color: #2c2727;
+      font-style: normal;
+      color: rgb(251, 250, 254);
+      margin-top: .3vh;
+      }}

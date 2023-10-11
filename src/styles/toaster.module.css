@@ -37,7 +37,7 @@
 
 /* Error toast style */
 .toast.error {
-    background-color: #f44336; /* Red color for error */
+    background-color: #f11809; /* Red color for error */
 }
 
 /* Info toast style */
@@ -47,7 +47,7 @@
 
 /* Warning toast style */
 .toast.warning {
-    background-color: #ff9800; /* Orange color for warning */
+    background-color: #ff8000; /* Orange color for warning */
 }
 
 /* Close button for toast */
@@ -92,3 +92,5 @@
 .toast-icon.warning {
     color: #ff9800;
 }
+
+  

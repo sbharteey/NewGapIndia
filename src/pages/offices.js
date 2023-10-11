@@ -3,8 +3,8 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '../layout';
 import LocationSelector from '../components/LocationSelector';
+import officesData from '../data/officesLocationData';
 import styles from '../styles/offices.module.css';
-import officesData from '../data/officesLocationData'; // Import your offices data
 
 const OfficesPage = () => {
   const handleFormSubmit = (filteredOfficeBearers) => {
@@ -13,16 +13,11 @@ const OfficesPage = () => {
   };
 
   return (
-    <Layout pageTitle="Offices">
-      <Head>
-        <title>Gareeb Aadmi Party/offices</title>
-        <meta
-          name="Office Selection Page"
-          content="Select your office location"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <LocationSelector officesData={officesData} handleFormSubmit={handleFormSubmit} />
+    <Layout pageTitle="Offices Page">
+      <div className={`${styles.pageContainer} ${styles.main}`}>
+        <p>All India Location wise Office Bearers  & Address</p>
+        <LocationSelector officesData={officesData} handleFormSubmit={handleFormSubmit} />
+      </div>
     </Layout>
   );
 };

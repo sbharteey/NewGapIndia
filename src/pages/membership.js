@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Layout from '../layout';
 import MembershipForm from '../components/MembershipForm';
 import styles from '../styles/membership.module.css';
+
 const MembershipPage = () => {
   return (
     <Layout pageTitle="Membership">
@@ -13,9 +14,11 @@ const MembershipPage = () => {
           name="online membership form of Gareeb Aadmi Party"
           content="Membership Form for GAP India"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MembershipForm />
+      <div className={styles.main}> {/* Add the main container class here */}
+        <p className={styles.membershipTitle}>ONLINE MEMBERSHIP FORM</p>
+        <MembershipForm className={styles.membershipForm} />
+      </div>
     </Layout>
   );
 };

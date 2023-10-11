@@ -2,6 +2,7 @@
 import { useRouter } from 'next/router';
 import MembershipCardTemplate from '../../components/MembershipCardTemplate';
 import Layout from '../../layout';
+import styles from '../../styles/memberCardPage.module.css';
 
 const MemberCardPage = () => {
   const router = useRouter();
@@ -12,7 +13,9 @@ const MemberCardPage = () => {
 
   return (
     <Layout pageTitle="Membership Card">
-      <MembershipCardTemplate mobile={mobile} /> {/* Pass the mobile as a prop */}
+      <div className={styles.memberCardPage}>
+        <MembershipCardTemplate mobile={mobile} />
+      </div>
     </Layout>
   );
 };

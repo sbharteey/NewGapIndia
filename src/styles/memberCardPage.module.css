@@ -1,0 +1,12 @@
+/* src/styles/memberCardPage.module.css  */
+
+/* Style for the outer container */
+.memberCardPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 350px);
+    background-color: #f0f0f0; /* Set your desired background color */
+  }
+
+  

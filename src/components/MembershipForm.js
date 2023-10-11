@@ -7,7 +7,7 @@ import styles from '../styles/membershipForm.module.css';
 import { useDropzone } from 'react-dropzone';
 import Image from 'next/image';
 import Compressor from 'compressorjs';
-import { toast } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
@@ -97,12 +97,12 @@ const MembershipForm = () => {
     try {
       console.log("Try0");
       const response = await addMemberMutation.mutateAsync(formData);
-console.log("Try1");
+      console.log("Try1");
       // Handle the success case
       if (response.message) {
         // Member added successfully
         toast.success(response.message); // Use toast for success message
-console.log("inside if");
+        console.log("inside if");
         // Optionally, you can clear the form or perform other actions after a successful submission.
         // Clear the form data, for example:
         setFormData(membershipDataStructure);
@@ -125,10 +125,10 @@ console.log("inside if");
     accept: '.jpg, .jpeg, .png',
     onDrop: handlePhotoChange,
   });
+
   return (
     <div>
       <div className={styles.membershipFormContainer}>
-        <h1>Membership Form</h1>
         <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="name">
@@ -245,19 +245,18 @@ console.log("inside if");
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="voterId"></label>
-            Voter ID <span className={styles.required}>*</span>
+            Voter ID
             <input
               type="text"
               id="voterId"
               name="voterId"
               value={formData.voterId}
               onChange={handleInputChange}
-              required // Add the required attribute
             />
           </div>
           <div className={`${styles.formGroup} ${styles.dropzone}`} {...getRootProps()}>
             <label htmlFor="photo" className={styles.fileInputLabel}>
-              Member Photo (JPG/PNG)
+               (JPG/PNG)
             </label>
             <input
               type="file"
@@ -279,7 +278,7 @@ console.log("inside if");
                 />
               </div>
             )}
-            <p>Upload your small Passport size Photo so that Photo ID card will look beautiful.</p>
+           
           </div>
           <button type="submit" className={styles.submitButton}>
             Submit

@@ -6,11 +6,9 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
+       
         <li className={styles.navItem}>
           <Link href="/">Home</Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/vision">Vision</Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/manifesto">Manifesto</Link>
@@ -22,7 +20,7 @@ const Navbar = () => {
           <Link href="/donation">Donation</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/offices">Office Bearers</Link>
+          <Link href="/offices">offices</Link>
         </li>
       </ul>
     </nav>

@@ -1,19 +1,62 @@
-/* styles/index.module.css */
-
-/* Wrapper for the content */
+/* styles/vision.module.css */
+.main {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 350px);
+}
 .container {
-  display: flexbox;
-  max-width: 100%;
-  margin: .5rem auto;
-}
+  display: list-item;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+    max-width: 80%;
+    max-height: fit-content;
+    line-height: 2.5rem;
+    margin: auto;
+    font-size: 2rem;
+    word-spacing: .25rem;
+    overflow-wrap: normal;
+    
+  }
 
-/* Styling for the featured videos section */
-.content h3 {
-  font-size: 1.5rem;
-  font-weight: 100;
-  margin-bottom: .5rem;
-}
+  .google-docs-content {
+    display: list-item;
+    font-size: 1.5rem;
+  }
+  
+  .container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .container ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+  }
+  
+  .container li {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .container pre {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  .image {
+display: flexbox;
+position: relative;
+width: 15rem;
+border-radius: 40%;
+float: right;
+  }
+  .h1 {
+display: flex;
+position: relative;
+justify-content: center;
+list-style: none;
+font-size: 2rem;
 
-.googleslides {
-  width: 80%;
-}
+
+  }

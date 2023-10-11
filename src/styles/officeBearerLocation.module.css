@@ -1,0 +1,79 @@
+/* src/styles/officeBearerLocation.module.css */
+.officeBearerDetails {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80vw;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.locationInfo {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.locationInfo p {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
+
+.officeBearersList {
+  list-style: none;
+  padding: 0;
+}
+
+.officeBearerItem {
+  margin: 2rem 0;
+}
+
+.officeBearerItem p {
+  font-size: 1rem; /* Adjust the font size as needed */
+}
+
+.membershipCardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.membershipCard {
+  flex: 0 0 22%; /* Adjust as needed to fit your content */
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin: auto;
+}
+
+.membershipCard p {
+   margin: auto;
+} 
+
+
+
+.notFound {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.buttonLink {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  background-color: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.buttonLink:hover {
+  background-color: #0056b3;
+}

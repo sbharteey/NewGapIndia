@@ -12,7 +12,7 @@ import CustomToaster from '../src/components/Toaster';
 
 const Layout = ({ children, pageTitle }) => {
   const websiteTitle = 'Gareeb Aadmi Party';
-  const websiteDescription = 'Founded by Shyam Bharteey';
+  const websiteDescription = 'GAP a Political Party in India Founded by Shyam Bharteey';
   // Get the current route
   const router = useRouter();
   const isDonationPage = router.pathname === '/donation';
@@ -22,8 +22,8 @@ const Layout = ({ children, pageTitle }) => {
         <title>{pageTitle ? `${pageTitle} - ${websiteTitle}` : websiteTitle}</title>
         <meta name="description" content={websiteDescription} />
         <meta charSet="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <CustomToaster />
       <Header />

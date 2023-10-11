@@ -6,45 +6,34 @@ import Layout from "../../layout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 import MembershipCardTemplate from '../../components/MembershipCardTemplate';
-import styles from "../../styles/officeBearerDetails.module.css";
-import { officeBearersData } from "../../models/officeBearersData";
+import styles from "../../styles/officeBearerLocation.module.css";
 
 const OfficeBearerPage = () => {
   const router = useRouter();
   const { location } = router.query;
-  const country = location?.[0] || "Not Specified"; // Default value if not provided
-  const state = location?.[1] || "Not Specified"; // Default value if not provided
-  const lokSabha = location?.[2] || "Not Specified"; // Default value if not provided
-  const vidhanSabha = location?.[3] || "Not Specified"; // Default value if not provided
+  const country = location?.[0] || "Not Specified";
+  const state = location?.[1] || "Not Specified";
+  const lokSabha = location?.[2] || "Not Specified";
+  const vidhanSabha = location?.[3] || "Not Specified";
   const [officeBearers, setOfficeBearers] = useState([]);
 
   useEffect(() => {
-    // Fetch office bearers data based on the location
     const fetchOfficeBearers = async () => {
       try {
         const response = await fetch(`/api/queryOfficeBearers?country=${country}&state=${state}&lokSabha=${lokSabha}&vidhanSabha=${vidhanSabha}`);
 
         if (response.ok) {
-          console.log("Response OK");
           const data = await response.json();
-          console.log(data);
-          console.log("??");
           setOfficeBearers(data);
         } else {
-          console.log("ELSE");
-          // Handle errors when fetching office bearers
-          //console.error('Error fetching office bearers:', response.statusText);
           setOfficeBearers(null);
         }
       } catch (error) {
-        // Handle any errors here
         console.error('Error fetching office bearers:', error);
       }
     };
 
     if (location) {
-
-      console.log("location was true, so I will fetch office bearers now");
       fetchOfficeBearers();
     }
   }, [location]);
@@ -54,73 +43,74 @@ const OfficeBearerPage = () => {
       <Layout>
         <Head>
           <title>Office Bearer Details</title>
-          <meta
-            name="description"
-          //content={`Details for Office Bearer ${officeBearers.officeBearerId}`}
-          />
         </Head>
 
-        <div className={styles.officeBearerDetails}>
-          <h1 className={styles.detailsHeader}>Office Bearers Details</h1>
+        <div className={`${styles.officeBearerDetails} ${styles.main}`}>
           <div className={styles.locationInfo}>
-            {country && (
-              <p>
-                Country: {country}
-              </p>
-            )}
-            {state !== "Not Specified" && (
-              <p>
-                State: {state}
-              </p>
-            )}
-            {lokSabha !== "Not Specified" && (
-              <p>
-                Lok Sabha: {lokSabha}
-              </p>
-            )}
-            {vidhanSabha !== "Not Specified" && (
-              <p>
-                Vidhan Sabha: {vidhanSabha}
-              </p>
-            )}
+            {country && <p>Country: {country}</p>}
+            {state !== "Not Specified" && <p>State: {state}</p>}
+            {lokSabha !== "Not Specified" && <p>Lok Sabha: {lokSabha}</p>}
+            {vidhanSabha !== "Not Specified" && <p>Vidhan Sabha: {vidhanSabha}</p>}
           </div>
+
           {officeBearers ? (
             <ul className={styles.officeBearersList}>
               {officeBearers.map((item, index) => (
                 <li key={index} className={styles.officeBearerItem}>
+                  
+                  
                   <p>Office Address: {item.officeAddress}</p>
-                  <p>President:</p>
-                  <MembershipCardTemplate mobile={item.presidentMob} /> {/* Pass the mobile as a prop */}
-                  <p>Vice President:</p>
-                  <MembershipCardTemplate mobile={item.vpMob} /> {/* Pass the mobile as a prop */}
-                  <p>General Secretary:</p>
-                  <MembershipCardTemplate mobile={item.genSecMob} /> {/* Pass the mobile as a prop */}
-                  <p>IT Head:</p>
-                  <MembershipCardTemplate mobile={item.itHeadMob} /> {/* Pass the mobile as a prop */}
-                  <p>Active Member 1:</p>
-                  <MembershipCardTemplate mobile={item.activeMem1Mob} /> {/* Pass the mobile as a prop */}
-                  <p>Active Member 2:</p>
-                  <MembershipCardTemplate mobile={item.activeMem2Mob} /> {/* Pass the mobile as a prop */}
-                  {/* Add other properties as needed */}
+                  <div className={styles.membershipCardContainer}>
+                    <div className={styles.membershipCard}>
+
+                      <p>President:</p>
+                      <MembershipCardTemplate mobile={item.presidentMob} />
+                    </div>
+                    <div className={styles.membershipCard}>
+                      <p>Vice President:</p>
+                      <MembershipCardTemplate mobile={item.vpMob} />
+                    </div>
+                  </div>
+                  <div className={styles.membershipCardContainer}>
+                    <div className={styles.membershipCard}>
+                      <p>General Secretary:</p>
+                      <MembershipCardTemplate mobile={item.genSecMob} />
+                    </div>
+                    <div className={styles.membershipCard}>
+                      <p>IT Head:</p>
+                      <MembershipCardTemplate mobile={item.itHeadMob} />
+                    </div>
+                  </div>
+                  <div className={styles.membershipCardContainer}>
+                    <div className={styles.membershipCard}>
+                      <p>Active Member 1:</p>
+                      <MembershipCardTemplate mobile={item.activeMem1Mob} />
+                    </div>
+                    <div className={styles.membershipCard}>
+                      <p>Active Member 2:</p>
+                      <MembershipCardTemplate mobile={item.activeMem2Mob} />
+                    </div>
+                  </div>
                 </li>
               ))}
-              <Link href="/offices">
-                <button className={styles.buttonLink}>
-                  Return to Location Selection
-                </button>
-              </Link>
-
-
-
+              <div className={styles.returnToLocationSelector}>
+                <Link href="/offices">
+                  <button className={styles.buttonLink}>
+                    Return to Location Selection
+                  </button>
+                </Link>
+              </div>
             </ul>
           ) : (
             <div className={styles.notFound}>
               <p>हम पूरे देश में पार्टी के संगठन का विस्तार कर रहे हैं बहुत ही जल्द यहां भी पार्टी ऑफिस बनेगा</p>
-              <Link href="/offices">
-                <button className={styles.buttonLink}>
-                  Return to Location Selection
-                </button>
-              </Link>
+              <div className={styles.buttonLink}>
+                <Link href="/offices">
+                  <button className={styles.buttonLink}>
+                    Return to Location Selection
+                  </button>
+                </Link>
+              </div>
             </div>
           )}
         </div>
@@ -128,5 +118,5 @@ const OfficeBearerPage = () => {
     </div>
   );
 };
-export default OfficeBearerPage;
 
+export default OfficeBearerPage;

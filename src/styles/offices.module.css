@@ -1,0 +1,23 @@
+/* src/styles/offices.module.css */
+.main {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 350px);
+  }
+/* Style for the main container */
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+  width: 60%;
+  font-size: 1.7rem;
+  background-color: #ffffff;
+  border: .1rem solid #fbd605;
+  border-radius: 1rem;
+  text-align: center;
+  margin: auto;
+  }
+
+
+ 

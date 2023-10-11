@@ -2,94 +2,77 @@
 
 .card {
   display: flexbox;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  width: 275px;
-  height: 430px;
+  position: relative; 
+  width: 320px;
+  height: 520px;
   border: 2px solid #fbd605;
-  padding: 20px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 
 .p {
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   position: relative;
-  right: 15px;
-  top: 45px;
+  font-size: 16px;
+  top: 30px;
+  line-height: 2;
+  
   
 }
 
-.card h2 {
-  color: #ffffff;
-  margin-bottom: 2px;
+.card h1 {
   position: relative;
-  bottom: 30px;
-  
+  color: #ffffff;
+ font-size: 20px;
+ top: 8px;
+ left: 12px;
 }
 
 .card h5 {
   color: #ffffff;
-  margin-bottom: 2px;
   font-size: smaller;
   font-weight: lighter;
   position: relative;
-  bottom: 93px;
-  left: 78px;
+  left: 190px;
+  top: 14px;
+  
 }
 
 .card h6 {
   color: #ffffff;
-  margin-bottom: 2px;
   font-size: smaller;
   font-weight: lighter;
   position: relative;
-  top: 350px;
-  left: 100px;
+  top: 100px;
+left: 190px;
+  
+}
+
+.bothImages {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 80px;
+  
 }
 
 .photo {
   width: 130px;
   height: 130px;
-  margin: 10px auto;
   border: 2px solid #ffaa00;
   border-radius: 50%;
   overflow: hidden;
-  position: relative;
-  bottom: 345px;
+  
 }
 
 .photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
-
-.printCard {
-  position: relative;
-  bottom: 200px;
-  cursor: pointer;
-  justify-items: center;
-  
-}
-
-
 
 .qrCodeContainer img {
-  position: relative;
-  bottom: 305px;
-  left: 102px;
   max-width: 100px;
   max-height: 125px;
   border: 1px solid #333;
-  border-radius: 2px;
-  
-  
+  border-radius: 2px;  
 }
+

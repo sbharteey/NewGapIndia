@@ -1,44 +1,90 @@
 /* src/styles/subnavbar.module.css */
-
-/* Container styles for the Subnavbar */
 .subnavbar {
   height: 60px;
   width: 100%;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   background-color: #2c2727;
   color: rgb(255, 255, 255);
-  margin-bottom: .3vh;
-  gap: 2vw;
+  margin-bottom: 1rem;
+  gap: 3vw;
 }
-
-/* Specific styles for SearchBar */
-.subnavbar .searchBar {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-
-  height: 3vh;
-  gap: .5vw;
-  
-  
-  
-}
-
 /* Specific styles for DonateButton */
 .subnavbar .donateButton {
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
   border: none;
-  background-color: #ef0505;
-  padding: .5vh 1.5vw;
-  font-size: 1.2vw;
+  border-radius: 1rem;
+  background-color: #b81212;
+  padding: .5rem 1.5rem;
+  font-size: 1.5rem;
   cursor: pointer;
-
 }
 
-.subnavbar .donateButton :hover {
-  color: #0b4b45 !important;
+.subnavbar .donateButton:hover {
+  background-color: #931b1b;
+}
+
+.searchBar {
+  display: flex;
+  gap: 5px;
+}
+
+.searchBar input {
+  flex: 1;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+  width: 250px; 
+}
+
+.searchBar button {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect for the button */
+.searchBar button:hover {
+  background-color: #0056b3; /* Set the hover background color */
+}
+
+.error {
+  color: #f7f4f4; 
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+}
+
+/* Updated styles for the PrintCard component */
+.subnavbar .printCard {
+  border: none;
+  border-radius: 1rem;
+  background-color: #b81212;
+  padding: .5rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hover effect for the PrintCard button */
+.subnavbar .printCard:hover {
+  background-color: #931b1b; /* Slightly darker red */
+}
+
+@media print {
+  .card,
+  .p,
+  .card h1,
+  .card h5,
+  .card h6,
+  .printCard button {
+    color: #000 !important; /* Set text color to black for printing */
+  }
 }

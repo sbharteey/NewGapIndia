@@ -1,101 +1,110 @@
-/* donation.module.css */
+/* Style for the main container */
 .main {
-  width: 10%;
-  height: 100%;
-}
-.donationContainer {
-
+  display: flex;
   position: relative;
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 350px);
+  width: 100%;
+  padding: 1rem; /* Add padding as needed */
   
-  .donationContainer h1 {
-  
-    font-weight: lighter;
-    margin-bottom: 20px;
-  }
-  
-  .donationContainer p {
-  font-size: 20vh;
-  
-  }
-  
-  .paymentDetails {
-    
-    font-weight: lighter;
-  }
-  
-  .paymentDetails h2 {
-    font-size: 20px;
-    font-weight: lighter;
-    
-  }
-  
-  .paymentDetails p {
-    font-size: 18px;
-  
-  
-  }
-  
-  .qrCodeContainer {
-    text-align: center;
-  }
-  
-  .qrCodeContainer h2 {
-    font-size: 20px;
-  }
-  
-  .qrCodeContainer img {
-    
-  
-    max-width: 200px;
-    border: 2px solid #333;
-    border-radius: 8px;
-  }
-.content h1 {
-font-size: 30px;
 }
- 
-.content p {
-  font-size: 1.2vh;
-  }
-  
-  /* Responsive Styles */
-  @media screen and (max-width: 400px) {
-    .donationContainer {
-      padding: 10px;
-    }
-  
-    .donationContainer h1 {
-      font-size: 24px;
-    }
-  
-    .donationContainer p {
-      font-size: 16px;
-    }
-  
-    .paymentDetails h2 {
-      font-size: 20px;
-    }
-  
-    .paymentDetails p {
-      font-size: 16px;
-    }
-  
-    .qrCodeContainer img {
-      max-width: 200px;
-    }
-  }
-  
-    .qrCode {
-      display: flex;
-      position: absolute;
-      margin-top: -310px;
-      margin-left: 425px;
-      font-weight: lighter;
 
-    }
+/* Style for the donation container */
+.donationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%; /* Ensure it takes the full width */
+  height: calc(100vh - 350px);
+  padding: 2rem; /* Adjust padding as needed */
+  background-color: #ffffff;
+  border: .1rem solid #fbd605;
+  border-radius: 1rem;
+  text-align: center; /* Center align text content */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
+}
+
+
+
+
+/* Style for the content section */
+.content {
+  margin-top: 2em; /* Adjust margin as needed */
+  margin-bottom: 2em; /* Adjust margin as needed */
+}
+
+/* Style for the heading */
+.content h1 {
+  font-size: 2em;
+  font-weight: lighter;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+/* Style for the paragraphs */
+.content p {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+/* Style for the payment details section */
+.paymentDetails {
+  margin-top: 2em; /* Adjust margin as needed */
+  margin-bottom: 2em; /* Adjust margin as needed */
+}
+
+/* Style for the payment details headings */
+.paymentDetails h2 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Style for the payment details paragraphs */
+.paymentDetails p {
+  font-size: 1.4em;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Style for the QR code container */
+.qrCodeContainer {
+  margin: 1px;
+}
+
+/* Style for the QR code image wrapper */
+.qrCodeContainer .image-wrapper {
+  max-height: 100%; /* Limit the height of the image wrapper */
+}
+
+/* Style for the QR code image */
+.qrCodeContainer img {
+  
+  max-width: 100rem; /* Make the image responsive */
+  max-height: 100rem; /* Limit the image height to the wrapper's height */
+  width: auto;   /* Maintain aspect ratio */
+  
+}
+.imgandPaymentDetail {
+  display: flex;
+  position: relative;
+
   
   
+  gap: 60px;
+}
+
+
+
+/* Style for the page title */
+.page-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+  color: #333;
+}

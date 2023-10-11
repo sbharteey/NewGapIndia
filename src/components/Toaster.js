@@ -1,6 +1,6 @@
 // src/components/Toaster.js
 import React from 'react';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import style from '../styles/toaster.module.css';
 
 const CustomToaster = () => {
