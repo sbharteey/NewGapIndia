@@ -2,6 +2,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/membershipCardTemplate.module.css';
+import logoImage from '../../public/images/logo.png';
+import sbImage from '../../public/images/sb.png';
+
 
 const upiQRCodeImage = '/images/GAPupiQrCode.png';
 const MembershipCardTemplate = ({ mobile }) => {
@@ -41,9 +44,22 @@ const MembershipCardTemplate = ({ mobile }) => {
 
   return (
     <div id="membershipCard" className={styles.card}>
-      <h1> GAREEB AADMI PARTY  (GAP)</h1>
-      <h5>56/12/2014/PPS-I</h5>
+      <h1> GAREEB AADMI PARTY</h1>
+      <div className={styles.registration}>
+         <p>56/12/2014/PPS-I</p>
+      </div>
+      
+      <div className={styles.logoContainer}>
+  <Image src={logoImage} alt="Logo" width={100} height={100} />
+</div>
+<div className={styles.sbContainer}>
+  <Image src={sbImage} alt="SB Image" width={100} height={100} />
+</div>
+
+
+      
       <div className={styles.p}>
+      
         <p>ID: {memberData._id}</p>
         <p>{memberData.gapId}</p>
         <p>Name: {memberData.name}</p>
@@ -67,8 +83,8 @@ const MembershipCardTemplate = ({ mobile }) => {
           />
         </div>
       </div>
-      <div>
-        <h6>www.gapindia.org</h6>
+      <div className={styles.www}>
+        <p>www.gapindia.org</p>
       </div>
     </div>
   );

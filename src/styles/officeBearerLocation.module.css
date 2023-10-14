@@ -1,26 +1,33 @@
 /* src/styles/officeBearerLocation.module.css */
-.officeBearerDetails {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 80vw;
-  margin: auto;
-  padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+.body {
+  margin: 0;
+  padding: 0;
 }
-
-.locationInfo {
-  margin-top: 1rem;
+.main {
   display: flex;
-  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - px);
+  width: 100%;
+  padding: .5rem; /* Add padding as needed */
+  margin-top: 0.01rem;
+  margin-bottom: 0.01rem;
+}
+.officeBearerDetails {
+  background-color: rgb(27, 27, 27);
+  color: white;
+  flex-direction: column; 
+}
+.locationInfo {
+  display: block;
+  margin-top: 4rem;
 }
 
 .locationInfo p {
-  margin: 0;
-  padding: 0.5rem 0;
-  font-weight: bold;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
 
 .officeBearersList {
@@ -40,21 +47,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .membershipCard {
   flex: 0 0 22%; /* Adjust as needed to fit your content */
   padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  padding: 1rem;
   margin: auto;
 }
 
 .membershipCard p {
    margin: auto;
 } 
-
-
 
 .notFound {
   margin: 2rem 0;
@@ -63,8 +69,8 @@
 
 .buttonLink {
   display: block;
-  margin: 1rem auto;
-  padding: 1rem 1rem;
+  margin: 3rem auto;
+  padding: .2rem 1rem;
   font-size: 1.5rem;
   background-color: #0070f3;
   color: #fff;
@@ -76,4 +82,44 @@
 
 .buttonLink:hover {
   background-color: #0056b3;
+}
+.returnToLocationSelector1 {
+  display: block;
+  position: relative;
+  bottom: 96rem;
+}
+/* Media Query for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .membershipCardContainer {
+    flex-direction: column; /* Change to a single column layout for mobile */
+    gap: 1rem;
+  
+    
+  }
+
+  .membershipCard {
+    flex: 0 0 calc(50% + 10px); /* Set to 50% (two cards per row) for desktop */
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin: 0 auto; /* Center horizontally within the container */
+    
+  }
+  .returnToLocationSelector1 {
+    display: block;
+    position: relative;
+    bottom: 184rem;
+    
+  }
+  .main {
+    display: flex;
+    flex-direction: column; /* Display content in a single column */
+    align-items: center; /* Center horizontally within the body container */
+    justify-content: center; /* Center vertically within the body container */
+    height: calc(100vh - px);
+    width: 80%;
+    padding: .5rem; /* Add padding as needed */
+    margin: 0 auto 
+    
+  }
+
 }

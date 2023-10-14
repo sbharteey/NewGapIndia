@@ -15,7 +15,7 @@ const OfficesPage = () => {
   return (
     <Layout pageTitle="Offices Page">
       <div className={`${styles.pageContainer} ${styles.main}`}>
-        <p>All India Location wise Office Bearers  & Address</p>
+        <h1>All India Location wise Office Bearers  & Address</h1>
         <LocationSelector officesData={officesData} handleFormSubmit={handleFormSubmit} />
       </div>
     </Layout>

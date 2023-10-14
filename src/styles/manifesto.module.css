@@ -2,34 +2,30 @@
 .main {
   display: flex;
   width: 100%;
-  height: calc(100vh - 350px);
+  min-height: calc(100vh - 250px);
 }
 .container {
   display: list-item;
   position: relative;
   justify-content: center;
   align-items: center;
+  background-color: rgb(27, 27, 27);
+  color: rgb(255, 255, 255);
     max-width: 80%;
-    max-height: fit-content;
+    max-height: calc(100vh - 0px);
     margin: auto;
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 2;
     word-spacing: .25rem;
-    overflow-wrap: normal;
   }
 
   .google-docs-content {
     display: list-item;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  
-  .h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
+   
   .p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 20px;
   }
@@ -41,22 +37,81 @@
   }
   
   .li {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 10px;
   }
   
-  .pre {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    overflow: auto;
-  }
-  
-  .pre p {
-    margin: 0;
-  }
-  
-  /* You can add more styles as needed */
-  
+  .image {
+    display: flexbox;
+    position: relative;
+    width: 10rem;
+    border-radius: 40%;
+    float: right;
+      }
+      
+      .h1 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    list-style: none;
+    font-size: 2rem;
+      }
+      @media (max-width: 768px) {
+        .container {
+          display: list-item;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(27, 27, 27);
+          color: rgb(255, 255, 255);
+            max-width: 80%;
+            height: calc(100vh - 50px);
+            margin: auto;
+            font-size: 1rem;
+            line-height: 2;
+            word-spacing: .25rem;
+            
+          }
+        
+          .google-docs-content {
+            display: list-item;
+            font-size: 1rem;
+          }
+          
+          
+          .p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+          }
+          
+          .ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+          }
+          
+          .li {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+          
+          .image {
+            display: flexbox;
+            position: relative;
+            width: 8rem;
+            border-radius: 40%;
+            float: right;
+              }
+              
+              .h1 {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            list-style: none;
+            font-size: 1.1rem;
+              }
+
+      }

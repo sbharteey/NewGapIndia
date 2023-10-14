@@ -9,11 +9,13 @@ import Image from 'next/image';
 import Compressor from 'compressorjs';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
+
 const MembershipForm = () => {
   const [formData, setFormData] = useState(membershipDataStructure);
   const [selectedPhotoName, setSelectedPhotoName] = useState("");
   const [isPhotoRequired, setIsPhotoRequired] = useState(true);
   const [mobileUniqueError, setMobileUniqueError] = useState(false);
+
   const handleMobileBlur = async () => {
     // Make a GET request to check mobile number uniqueness
     try {
@@ -29,16 +31,19 @@ const MembershipForm = () => {
       }
     } catch (error) {
     }
-  };
+  }
+
   // Use the useAddMember mutation hook
   const addMemberMutation = useAddMember();
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
-  };
+  }
+
   const handlePhotoChange = (acceptedFiles) => {
     if (acceptedFiles.length > 0) {
       const photoFile = acceptedFiles[0];
@@ -55,20 +60,21 @@ const MembershipForm = () => {
               ...prevFormData,
               photo: e.target.result,
             }));
-          };
+          }
           reader.readAsDataURL(result);
         },
         error(err) {
-        },
-      });
+        }
+      })
 
       // Photo is uploaded, no longer required
       setIsPhotoRequired(false);
     }
-  };
+  }
 
   // Define an object to store unique mobile numbers
   const uniqueMobileNumbers = {};
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -90,6 +96,7 @@ const MembershipForm = () => {
       toast.error('Mobile number already exists.'); // Use toast for error message
       return;
     }
+
     // Mark the mobile number as used
     uniqueMobileNumbers[formData.mobile] = true;
 
@@ -98,11 +105,13 @@ const MembershipForm = () => {
       console.log("Try0");
       const response = await addMemberMutation.mutateAsync(formData);
       console.log("Try1");
+
       // Handle the success case
       if (response.message) {
         // Member added successfully
         toast.success(response.message); // Use toast for success message
         console.log("inside if");
+
         // Optionally, you can clear the form or perform other actions after a successful submission.
         // Clear the form data, for example:
         setFormData(membershipDataStructure);
@@ -116,15 +125,16 @@ const MembershipForm = () => {
         toast.error(response.error); // Use toast for error message
       }
     } catch (error) {
-      console.log("there was some erorrrr");
+      console.log("there was some error");
       // Handle network errors or other exceptions
       toast.error('Error adding member.catch'); // Use toast for error message
     }
-  };
+  }
+
   const { getRootProps, getInputProps } = useDropzone({
     accept: '.jpg, .jpeg, .png',
     onDrop: handlePhotoChange,
-  });
+  })
 
   return (
     <div>
@@ -154,7 +164,7 @@ const MembershipForm = () => {
               type="tel"
               id="mobile"
               name="mobile"
-              placeholder="ID Card will be sent if No. in WhatsApp"
+              placeholder="ID Card will be sent in WhatsApp"
               value={formData.mobile}
               onChange={handleInputChange}
               onBlur={handleMobileBlur} // Add this onBlur event handler
@@ -220,7 +230,6 @@ const MembershipForm = () => {
                 ))}
             </select>
           </div>
-
           <div className={styles.formGroup}>
             <label htmlFor="vidhanSabha">
               Vidhan Sabha <span className={styles.required}>*</span>
@@ -244,8 +253,9 @@ const MembershipForm = () => {
             </select>
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="voterId"></label>
-            Voter ID
+            <label htmlFor="voterId">
+              Voter ID
+            </label>
             <input
               type="text"
               id="voterId"
@@ -256,16 +266,17 @@ const MembershipForm = () => {
           </div>
           <div className={`${styles.formGroup} ${styles.dropzone}`} {...getRootProps()}>
             <label htmlFor="photo" className={styles.fileInputLabel}>
-               (JPG/PNG)
+              (JPG/PNG)
             </label>
             <input
               type="file"
               id="photo"
               name="photo"
               accept="image/*" // Allow only image files
-              onChange={(e) => handlePhotoUpload(e.target.files[0])}
+              onChange={(e) => handlePhotoChange(e.target.files)}
               className={styles.fileInput}
               {...getInputProps()}
+              style={{ display: 'none' }} // Hide the default file input
             />
             {/* Display the selected photo preview */}
             {formData.photo && (
@@ -278,8 +289,21 @@ const MembershipForm = () => {
                 />
               </div>
             )}
-           
           </div>
+
+          {/* Add the label and input for capturing a photo with the device's camera */}
+          <label htmlFor="camera" className={styles.cameraLabel}>
+            Capture Photo
+            <input
+              type="file"
+              id="camera"
+              accept="image/*"
+              capture="camera"
+              onChange={(e) => handlePhotoChange(e.target.files)}
+              style={{ display: 'none' }}
+            />
+          </label>
+
           <button type="submit" className={styles.submitButton}>
             Submit
           </button>
@@ -287,5 +311,6 @@ const MembershipForm = () => {
       </div>
     </div>
   );
-};
+}
+
 export default MembershipForm;

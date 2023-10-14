@@ -35,7 +35,7 @@ const Home = () => {
       <div className={`${styles.container} ${styles.main}`}>
       <img src="/images/sb small.png" alt="Image Description" className={styles.image} />
 
-        <h1 className={styles.h1}>Welcome to GAP</h1>
+        <h1 className={styles.h1}></h1>
         <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
         <p>{
         //content

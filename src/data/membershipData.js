@@ -1689,7 +1689,7 @@ const membershipData = {
           "AC-99  Mahuva",
           "AC-101  Gariadhar",
         ],
-        "Bhav Nagar": [
+        "Bhavnagar": [
           "AC-100  Talaja",
           "AC-102  Palitana",
           "AC-103  Bhavnagar Rural",

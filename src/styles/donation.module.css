@@ -4,22 +4,24 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 350px);
+  height: calc(100vh - 0px);
   width: 100%;
-  padding: 1rem; /* Add padding as needed */
+  padding: .5rem; /* Add padding as needed */
+  margin-top: 2rem;
+  margin-bottom: 4rem;
   
 }
 
 /* Style for the donation container */
 .donationContainer {
-  display: flex;
   flex-direction: column;
   align-items: center;
   width: 70%; /* Ensure it takes the full width */
-  height: calc(100vh - 350px);
+  height: calc(100vh - 0px);
   padding: 2rem; /* Adjust padding as needed */
-  background-color: #ffffff;
-  border: .1rem solid #fbd605;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  border: .1rem solid #ed7321;
   border-radius: 1rem;
   text-align: center; /* Center align text content */
   margin-top: 2rem;
@@ -34,6 +36,8 @@
 .content {
   margin-top: 2em; /* Adjust margin as needed */
   margin-bottom: 2em; /* Adjust margin as needed */
+  background-color: rgb(27, 27, 27);
+  color: rgb(255, 255, 255);
 }
 
 /* Style for the heading */
@@ -41,20 +45,21 @@
   font-size: 2em;
   font-weight: lighter;
   margin-bottom: 1em;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Style for the paragraphs */
 .content p {
   font-size: 1.4em;
   margin-bottom: 1em;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Style for the payment details section */
 .paymentDetails {
   margin-top: 2em; /* Adjust margin as needed */
   margin-bottom: 2em; /* Adjust margin as needed */
+  color: #ffffff;
 }
 
 /* Style for the payment details headings */
@@ -62,14 +67,14 @@
   font-size: 2rem;
   font-weight: lighter;
   margin-bottom: 1rem;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Style for the payment details paragraphs */
 .paymentDetails p {
   font-size: 1.4em;
   margin-bottom: 1rem;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Style for the QR code container */
@@ -93,9 +98,6 @@
 .imgandPaymentDetail {
   display: flex;
   position: relative;
-
-  
-  
   gap: 60px;
 }
 
@@ -106,5 +108,108 @@
   font-size: 2em;
   text-align: center;
   margin-bottom: 1em;
-  color: #333;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .donationContainer {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width */
+    height: calc(100vh - 0px);
+    padding: 0.5rem; /* Adjust padding as needed */
+    background-color: rgb(27, 27, 27);
+    color: white;
+    border: .05rem solid #ed9b21;
+    border-radius: 1rem;
+    text-align: center; /* Center align text content */
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    
+  }
+  
+  
+  
+  
+  /* Style for the content section */
+  .content {
+    margin-top: 0.5rem; /* Adjust margin as needed */
+    margin-bottom: 1rem; /* Adjust margin as needed */
+    background-color: rgb(27, 27, 27);
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Style for the heading */
+  .content h1 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Style for the paragraphs */
+  .content p {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+  }
+  
+  /* Style for the payment details section */
+  .paymentDetails {
+    margin-top: 0.1rem; /* Adjust margin as needed */
+    margin-bottom: 0.1rem; /* Adjust margin as needed */
+    color: #ffffff;
+  }
+  
+  /* Style for the payment details headings */
+  .paymentDetails h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
+  /* Style for the payment details paragraphs */
+  .paymentDetails p {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Style for the QR code container */
+  .qrCodeContainer {
+    margin: 0.5rem;
+  }
+  
+  /* Style for the QR code image wrapper */
+  .qrCodeContainer .image-wrapper {
+    max-height: 100%; /* Limit the height of the image wrapper */
+  }
+  
+  /* Style for the QR code image */
+  .qrCodeContainer img {
+    
+    max-width: 20rem; /* Make the image responsive */
+    max-height: 20rem; /* Limit the image height to the wrapper's height */
+    width: auto;   /* Maintain aspect ratio */
+    
+  }
+  .imgandPaymentDetail {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: .5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  
+  
+  /* Style for the page title */
+  .page-title {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #ffffff;
+  }
+
 }

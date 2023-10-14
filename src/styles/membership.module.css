@@ -1,17 +1,33 @@
 /* src/styles/membership.module.css */
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: calc(100vh - 350px);
-  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  background-color: rgb(27, 27, 27);
+  color: white;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  max-width: 65%;
+  height: calc(100vh - 0px);
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+}
   
   .membershipTitle {
-    font-size: 20px;
+    font-size: 1rem;
     word-spacing: 4px;
     letter-spacing: 1px;
+    margin-bottom: 1rem;
   }
   
-  
+  @media (max-width: 768px) {
+    .membershipTitle {
+      font-size: 0.9rem;
+      word-spacing: 4px;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+  }

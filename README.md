@@ -2,6 +2,8 @@ PATCH method updated
 src/pages/api/updateMemberPhoto.js = Done
 vision and manifesto google docs done
 otp twilio failed not done project has error
+vision page removed today 11 oct 8pm
+final todat 14 oct 2023
 
 The error you're encountering, "ReactServerComponentsError," is related to the usage of next/router inside a Server Component in your layout.js file. The error message suggests using next/navigation instead.
 

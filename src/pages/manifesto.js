@@ -1,3 +1,4 @@
+// src/pages/manifesto.js
 import React, { useEffect, useState } from 'react';
 import Layout from '../layout';
 import styles from '../styles/manifesto.module.css';
@@ -10,7 +11,6 @@ const Manifesto = () => {
     const fetchGoogleDocsContent = async () => {
       try {
         const response = await fetch('/api/fetchManifestoData');
-
         if (response.ok) {
           const data = await response.json();
           setContent(data.content);
@@ -24,15 +24,15 @@ const Manifesto = () => {
         setContent('Error fetching content.');
       }
     };
-
     fetchGoogleDocsContent();
-
-  }, []);
+  },
+    []);
 
   return (
     <Layout pageTitle="Manifesto">
       <div className={`${styles.container} ${styles.main}`}>
-        <h1></h1>
+        <img src="/images/sb small.png" alt="Image Description" className={styles.image} />
+        <h1 className={styles.h1}>GAP Manifesto 2024</h1>
         <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </Layout>

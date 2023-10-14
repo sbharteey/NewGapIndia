@@ -91,6 +91,7 @@ const LocationSelector = ({ officesData, handleFormSubmit }) => {
   };
 */
   return (
+    <div className={styles.mainBody}>
     <div className={styles.container}>
       <div className={styles.locationSelector}>
         <div className={styles.formGroup}>
@@ -182,6 +183,7 @@ const LocationSelector = ({ officesData, handleFormSubmit }) => {
           Submit
         </button>
       </div>
+    </div>
     </div>
   );
 };

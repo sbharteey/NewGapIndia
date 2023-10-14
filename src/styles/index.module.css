@@ -9,54 +9,109 @@
   position: relative;
   justify-content: center;
   align-items: center;
+  background-color: rgb(27, 27, 27);
+  color: rgb(255, 255, 255);
     max-width: 80%;
-    max-height: fit-content;
-    line-height: 2.5rem;
+    max-height: calc(100vh - 0px);
     margin: auto;
-    font-size: 2rem;
-    word-spacing: .25rem;
-    overflow-wrap: normal;
-    
+    font-size: 1rem;
+    line-height: 2;
+    word-spacing: .25rem;   
   }
 
   .google-docs-content {
     display: list-item;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   
-  .container h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
   
-  .container ul {
-    list-style-type: disc;
-    margin-left: 2rem;
+  .ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
   }
   
-  .container li {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-  }
-  
-  .container pre {
-    font-size: 1.2rem;
-    margin-top: 1rem;
+  .li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
   }
   
   .image {
-display: flexbox;
-position: relative;
-width: 15rem;
-border-radius: 40%;
-float: right;
-  }
-  .h1 {
-display: flex;
-position: relative;
-justify-content: center;
-list-style: none;
-font-size: 2rem;
+    display: flexbox;
+    position: relative;
+    width: 10rem;
+    border-radius: 40%;
+    float: right;
+      }
+      
+      .h1 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    list-style: none;
+    font-size: 2rem;
+      }
+      @media (max-width: 768px) {
+        .container {
+          display: list-item;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(27, 27, 27);
+          color: rgb(255, 255, 255);
+            max-width: 80%;
+            height: calc(100vh - 50px);
+            margin: auto;
+            font-size: 1rem;
+            line-height: 2;
+            word-spacing: .25rem;
+            
+          }
+        
+          .google-docs-content {
+            display: list-item;
+            font-size: 1rem;
+          }
+          
+          
+          .p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+          }
+          
+          .ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+          }
+          
+          .li {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+          
+          .image {
+            display: flexbox;
+            position: relative;
+            width: 8rem;
+            border-radius: 40%;
+            float: right;
+              }
+              
+              .h1 {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            list-style: none;
+            font-size: 1.4rem;
+              }
 
-
-  }
+      }

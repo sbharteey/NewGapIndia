@@ -1,9 +1,12 @@
+// src/components/Footer.js
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/footer.module.css';
 
 const Footer = () => {
   return (
+    <div className={styles.container}>
+      <div className={styles.content}></div>
     <footer className={styles.footer}>
       <div className={styles.socialIcons}>
         <a href="https://www.facebook.com/gap.sbharteey/" target="_blank" rel="noopener noreferrer">
@@ -28,12 +31,11 @@ const Footer = () => {
           <Image src="/images/telegram.png" alt="Telegram" width={32} height={32} />
         </a>
       </div>
-<div>
-      <p className={styles.copyRight}>Contact Us :- 9599076349, Email :- gapindia.org@gmail.com </p>
-      <p className={styles.copyRight}>Regd. Office :- R-21, Mohan Garden, New Delhi - 110059</p>
-      <p className={styles.copyRight}>© 2023 Gareeb Aadmi Party. All rights reserved.</p>
+      <div>
+        <p className={styles.copyRight}>© 2023 Gareeb Aadmi Party. All rights reserved.</p>
       </div>
     </footer>
+    </div>
   );
 };
 

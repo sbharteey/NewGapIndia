@@ -1,3 +1,4 @@
+// src/components/Header.js
 import React from 'react';
 import styles from '../styles/header.module.css';
 import Image from 'next/image';

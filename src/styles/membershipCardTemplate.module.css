@@ -3,56 +3,87 @@
 .card {
   display: flexbox;
   position: relative; 
+  justify-content: center;
+ align-items: center;
+ background-color: white;
   width: 320px;
   height: 520px;
-  border: 2px solid #fbd605;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 0.2rem solid #aa6402;
 }
 
 .p {
-  color: #ffffff;
+  color: black;
   text-align: center;
+  font-size: 1rem;
   position: relative;
-  font-size: 16px;
-  top: 30px;
+  bottom: 2rem;
+  margin-bottom: 1.4rem;
   line-height: 2;
-  
-  
 }
 
+.registration {
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: end;
+  position: relative;
+  top: 0.4rem;
+  right: 3rem;
+}
 .card h1 {
-  position: relative;
-  color: #ffffff;
- font-size: 20px;
- top: 8px;
- left: 12px;
+  display: flex;
+  justify-content: center;
+  color: black;
+ font-size: 1.3rem;
+ margin-top: 1.4rem;
+}
+ 
+/* membershipCardTemplate.module.css */
+.logoContainer {
+  display: flex; 
+  justify-content: flex-start; 
 }
 
-.card h5 {
-  color: #ffffff;
+.logoContainer img {
+  width: 3.3rem;
+  height: 1.1rem;
+  position: relative;
+  bottom: 3.5rem;
+  left: 0.3rem;
+}
+
+.sbContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sbContainer img {
+  width: 4.5rem;
+  height: auto;
+  position: relative;
+  bottom: 4.9rem;
+  left: 0.7rem;
+}
+
+.www {
+  display: flexbox;
+  justify-content: end;
+  width: 7.1rem;
+  color: black;
   font-size: smaller;
   font-weight: lighter;
   position: relative;
-  left: 190px;
-  top: 14px;
-  
-}
-
-.card h6 {
-  color: #ffffff;
-  font-size: smaller;
-  font-weight: lighter;
-  position: relative;
-  top: 100px;
-left: 190px;
-  
+  bottom: 0.8rem;
+  left: 11.5rem;
 }
 
 .bothImages {
   display: flex;
-  justify-content: space-around;
   position: relative;
-  top: 80px;
-  
+  bottom: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .photo {
@@ -61,7 +92,6 @@ left: 190px;
   border: 2px solid #ffaa00;
   border-radius: 50%;
   overflow: hidden;
-  
 }
 
 .photo img {

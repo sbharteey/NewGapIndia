@@ -24,10 +24,10 @@ const DonationPage = () => {
           </div>
           <div className={styles.imgandPaymentDetail}>
           <div className={styles.paymentDetails}>
-            <h2>Bank Account Details:</h2>
-            <p>Account Number:  {bankAccountDetails.accountNumber}</p>
-            <p>IFSC Code:  {bankAccountDetails.ifscCode}</p>
-            <p>Account Name:  {bankAccountDetails.accountHolderName}</p>
+            <h1>Bank Account Details:</h1>
+            <p>Account Number :  {bankAccountDetails.accountNumber}</p>
+            <p>IFSC Code :  {bankAccountDetails.ifscCode}</p>
+            <p>Account:  {bankAccountDetails.accountHolderName}</p>
           </div>
           <div className={styles.qrCodeContainer}>
   <div className="image-wrapper">

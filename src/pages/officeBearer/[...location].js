@@ -93,13 +93,22 @@ const OfficeBearerPage = () => {
                   </div>
                 </li>
               ))}
-              <div className={styles.returnToLocationSelector}>
+              <div className={styles.returnToLocationSelector1}>
+                <Link href="/offices">
+                  <button className={styles.buttonLink}>
+                    Location Selection
+                  </button>
+                </Link>
+              </div>
+
+              <div className={styles.returnToLocationSelector2}>
                 <Link href="/offices">
                   <button className={styles.buttonLink}>
                     Return to Location Selection
                   </button>
                 </Link>
               </div>
+
             </ul>
           ) : (
             <div className={styles.notFound}>

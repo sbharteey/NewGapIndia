@@ -1,5 +1,6 @@
 // src/components/PrintCard.js
 import React from 'react';
+import styles from '../styles/printCard.module.css'
 
 const PrintCard = () => {
   const handlePrint = () => {
@@ -7,7 +8,7 @@ const PrintCard = () => {
   };
 
   return (
-    <div className="printCard">
+    <div className={styles.printCard}>
       <button onClick={handlePrint}>Print Card</button>
     </div>
   );

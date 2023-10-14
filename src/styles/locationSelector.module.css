@@ -1,11 +1,13 @@
 /* src/styles/locationSelector.module.css */
-
-.container {
+.mainBody {
   display: flex;
   position: relative;
   justify-content: center;
-  
-  
+  height: calc(100vh - 350px);
+  margin-bottom: 14rem;
+}
+.container {
+  margin-bottom: rem;
   
 }
 
@@ -13,15 +15,15 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    font-size: 20px;
-    gap: 12px;
-    max-width: 270px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    gap: 0.1;
+    max-width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 20px;
-    border: 4px solid #ffffff;
-    border-radius: 8px;
-    background-color: #131313;
+    border: 1px solid #ffffff;
+    border-radius: 0.5rem;
+    background-color: rgb(27, 27, 27);
   }
   
   .formGroup {
@@ -29,45 +31,52 @@
     flex-direction: column;
   }
   
-  .label {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
   
-  .select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 4px;
-    outline: none;
-  }
   
   .selectInput {
-    font-size: 18px;
-    margin: 4px;
-    padding: 14px;
-    border: 4px solid #fafbfc;
-    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
     width: 100%; /* To make the select input take full width */
-    margin-bottom: 10px; /* Add some bottom margin */
+    margin-bottom: 1rem; /* Add some bottom margin */
   }
   .submitButton {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-decoration: none;
     position: relative;
-    left: 70px;
-    width: 100px;
-    padding: 9px;
-    font-size: 18px;
+    left: 6rem;
+    width: 8rem;
+    padding: 0.7rem;
+    font-size: 1.2rem;
     background-color: #007bff;
-    color: #fff;
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.4rem;
     cursor: pointer;
     outline: none;
   }
   
   .submitButton:hover {
     background-color: #0056b3;
+  }
+  @media  (max-width: 768px) {
+    .submitButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      left: 3rem;
+      width: 8rem;
+      padding: 0.7rem;
+      font-size: 1.2rem;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      outline: none;
+    }
   }
