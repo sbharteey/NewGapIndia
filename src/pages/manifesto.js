@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../layout';
 import styles from '../styles/manifesto.module.css';
+import Image from 'next/image';
 
 const Manifesto = () => {
   const [content, setContent] = useState('');
@@ -31,7 +32,8 @@ const Manifesto = () => {
   return (
     <Layout pageTitle="Manifesto">
       <div className={`${styles.container} ${styles.main}`}>
-        <img src="/images/sb small.png" alt="Image Description" className={styles.image} />
+      <Image src="/images/sb small.png" alt="Image Description" width={200} height={200} className={styles.image} />
+
         <h1 className={styles.h1}>GAP Manifesto 2024</h1>
         <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
       </div>

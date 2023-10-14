@@ -101,7 +101,8 @@
           .image {
             display: flexbox;
             position: relative;
-            width: 8rem;
+            width: 200px;
+            height: 200px;
             border-radius: 40%;
             float: right;
               }

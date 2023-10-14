@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../layout';
 import styles from '../styles/index.module.css';
+import Image from 'next/image';
 
 const Home = () => {
   const [content, setContent] = useState('');
@@ -33,7 +34,10 @@ const Home = () => {
   return (
     <Layout pageTitle="Vision">
       <div className={`${styles.container} ${styles.main}`}>
-      <img src="/images/sb small.png" alt="Image Description" className={styles.image} />
+      <Image src="/images/sb small.png" alt="Image Description" width={200} height={200} className={styles.image} />
+
+
+
 
         <h1 className={styles.h1}></h1>
         <div className={styles['google-docs-content']} dangerouslySetInnerHTML={{ __html: content }} />
