@@ -29,6 +29,9 @@ yarn-error.log*
 
 secrets.json
 
+src/data/membershipData.js
+src/data/officesLocationData.js
+
 # vercel
 .vercel
 
