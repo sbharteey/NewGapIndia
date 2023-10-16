@@ -27,7 +27,7 @@ const Footer = () => {
         <a href="https://wa.me/message/4YCZTDK5W5VVF1" target="_blank" rel="noopener noreferrer">
           <Image src="/images/whatsapp.png" alt="WhatsApp" width={32} height={32} />
         </a>
-        <a href="https://www.telegram.org/" target="_blank" rel="noopener noreferrer">
+        <a href="https://t.me/gapindia/" target="_blank" rel="noopener noreferrer">
           <Image src="/images/telegram.png" alt="Telegram" width={32} height={32} />
         </a>
       </div>

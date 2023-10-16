@@ -21,7 +21,7 @@ const connectDatabase = async () => {
 };
 
 export const getMembershipDataByMobile = async (mobile) => {
- 
+
   try {
     await connectDatabase();
     const membershipData = await Membership.findOne({ mobile });
@@ -29,7 +29,7 @@ export const getMembershipDataByMobile = async (mobile) => {
     console.log("completed getMembershipDataByMobile");
     return membershipData;
   } catch (error) {
-   // console.log(error);
+    // console.log(error);
     console.error('Error fetching membership data by mobile:', error);
     return null;
   }

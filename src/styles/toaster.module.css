@@ -1,6 +1,4 @@
 /* src/styles/toaster.module.css */
-
-/* Style for the main toaster container */
 .toaster-container {
     position: fixed;
     bottom: 20px;
@@ -9,19 +7,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    max-width: 600px; /* Adjust the max width as needed */
+    max-width: 600px;
 }
 
 /* Style for individual toast notification */
 .toast {
-    background-color: #333; /* Background color for toast */
-    color: #fff; /* Text color */
+    background-color: #211d1d;
+    color: #fff;
     border-radius: 8px;
-    padding: 16px; /* Adjust padding as needed */
-    margin-top: 16px; /* Adjust margin-top as needed */
+    padding: 16px;
+    margin-top: 16px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
-    font-size: 18px; /* Adjust font size as needed */
+    font-size: 18px;
 }
 
 /* Hover effect for toast */
@@ -32,22 +30,22 @@
 
 /* Success toast style */
 .toast.success {
-    background-color: #4caf50; /* Green color for success */
+    background-color: #4caf50;
 }
 
 /* Error toast style */
 .toast.error {
-    background-color: #f11809; /* Red color for error */
+    background-color: #f11809;
 }
 
 /* Info toast style */
 .toast.info {
-    background-color: #2196F3; /* Blue color for info */
+    background-color: #2196F3;
 }
 
 /* Warning toast style */
 .toast.warning {
-    background-color: #ff8000; /* Orange color for warning */
+    background-color: #ff8000;
 }
 
 /* Close button for toast */
@@ -92,5 +90,3 @@
 .toast-icon.warning {
     color: #ff9800;
 }
-
-  

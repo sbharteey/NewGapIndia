@@ -1,74 +1,70 @@
 /* src/styles/printCard.module.css */
-
 .printCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  visibility: visible;
+}
+
+/* Styles for the button */
+.printCard button {
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Hover effect for the button */
+.printCard button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .printCard button {
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: .6rem;
+    width: 70px;
+  }
+}
+
+@media print {
+  .body {
+    page-break-after: auto;
+    visibility: hidden;
+  }
+
+  .card .p,
+  .card h1,
+  .card h5,
+  .card h6,
+  .www,
+  .registration,
+  .printCard button {
+    color: black !important;
     visibility: visible;
   }
-  
-  /* Styles for the button */
+
+  /* Additional styles to make sure content fits on one page */
+  .card {
+    width: 100%;
+    background-color: white;
+    visibility: visible;
+  }
+
+  .printCard {
+    padding: 0.5rem;
+  }
+
   .printCard button {
-    background-color: #0070f3; /* Button background color */
-    color: #fff; /* Button text color */
-    border: none;
-    border-radius: 0.5rem; /* Rounded button corners */
-    padding: 0.5rem 1rem; /* Button padding */
-    cursor: pointer;
-    font-size: 1.2rem; /* Button text size */
+    font-size: 0.8rem;
   }
-  
-  /* Hover effect for the button */
-  .printCard button:hover {
-    background-color: #0056b3; /* Button background color on hover */
-  }
-
-  @media (max-width: 768px) {
-    .printCard button {
-      background-color: #0070f3; /* Button background color */
-      color: #fff; /* Button text color */
-      border: none;
-      border-radius: 0.4rem; /* Rounded button corners */
-      padding: 0.3rem 0.6rem; /* Button padding */
-      cursor: pointer;
-      font-size: .6rem; /* Button text size */
-      width: 70px;
-    }
-
-  }
-  
-  @media print {
-    .body {
-      page-break-after: auto;
-      visibility: hidden;
-    }
-  
-    .card
-    .p,
-    .card h1,
-    .card h5,
-    .card h6,
-    .www,
-    .registration,
-    .printCard button {
-      color: black !important;
-      visibility: visible;
-    }
-  
-    /* Additional styles to make sure content fits on one page */
-    .card {
-      width: 100%; /* Ensure the card fits within the page width */
-      background-color: white;
-      visibility: visible;
-    }
-  
-    .printCard {
-      padding: 0.5rem; /* Reduce padding for printing */
-    }
-  
-    .printCard button {
-      font-size: 0.8rem; /* Reduce button text size for printing */
-    }
-  }
-  
+}

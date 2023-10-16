@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Image from 'next/image'; // Import the Image component
+import Image from 'next/image';
 
 function UserProfile() {
-  const [photo, setPhoto] = useState(null); // State to store the Base64 photo
+  const [photo, setPhoto] = useState(null);
 
   // Function to handle photo upload
   function handlePhotoUpload(file) {
@@ -11,8 +11,8 @@ function UserProfile() {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      const base64String = e.target.result.split(',')[1]; // Get the Base64 string
-      setPhoto(base64String); // Set the Base64 string in state
+      const base64String = e.target.result.split(',')[1];
+      setPhoto(base64String);
     };
 
     reader.readAsDataURL(file);
@@ -27,8 +27,8 @@ function UserProfile() {
           <Image
             src={`data:image/jpeg;base64,${photo}`}
             alt="User's Photo"
-            width={200} // Specify the desired width
-            height={200} // Specify the desired height
+            width={200}
+            height={200}
           />
         </div>
       )}

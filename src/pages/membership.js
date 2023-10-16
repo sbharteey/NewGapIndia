@@ -15,7 +15,7 @@ const MembershipPage = () => {
           content="Membership Form for GAP India"
         />
       </Head>
-      <div className={styles.main}> {/* Add the main container class here */}
+      <div className={styles.main}> 
         <p className={styles.membershipTitle}>ONLINE MEMBERSHIP FORM</p>
         <MembershipForm className={styles.membershipForm} />
       </div>

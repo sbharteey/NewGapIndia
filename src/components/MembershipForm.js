@@ -32,10 +32,8 @@ const MembershipForm = () => {
     } catch (error) {
     }
   }
-
   // Use the useAddMember mutation hook
   const addMemberMutation = useAddMember();
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
@@ -43,12 +41,10 @@ const MembershipForm = () => {
       [name]: value,
     }));
   }
-
   const handlePhotoChange = (acceptedFiles) => {
     if (acceptedFiles.length > 0) {
       const photoFile = acceptedFiles[0];
-      setSelectedPhotoName(photoFile.name); // Set the selected photo name
-
+      setSelectedPhotoName(photoFile.name);
       new Compressor(photoFile, {
         quality: 0.6, // Adjust the quality as needed
         maxWidth: 200, // Adjust the dimensions as needed
@@ -66,71 +62,53 @@ const MembershipForm = () => {
         error(err) {
         }
       })
-
       // Photo is uploaded, no longer required
       setIsPhotoRequired(false);
     }
   }
-
   // Define an object to store unique mobile numbers
   const uniqueMobileNumbers = {};
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     // Additional mobile number validation
     const firstDigit = formData.mobile.charAt(0);
     if (!['6', '7', '8', '9'].includes(firstDigit) || formData.mobile.length !== 10) {
-      toast.error('Please use a correct mobile number with 10 digits.'); // Use toast for error message
+      toast.error('Please use a correct mobile number with 10 digits.');
       return;
     }
-
     // Check if the photo field is empty when it's required
     if (isPhotoRequired) {
-      toast.error('Please upload your photo.'); // Use toast for error message
+      toast.error('Please upload your photo.');
       return;
     }
-
     // Check if the mobile number is already used
     if (uniqueMobileNumbers[formData.mobile]) {
-      toast.error('Mobile number already exists.'); // Use toast for error message
+      toast.error('Mobile number already exists.');
       return;
     }
-
     // Mark the mobile number as used
     uniqueMobileNumbers[formData.mobile] = true;
 
     // Call the mutation with the form data
     try {
-      console.log("Try0");
       const response = await addMemberMutation.mutateAsync(formData);
-      console.log("Try1");
-
       // Handle the success case
       if (response.message) {
         // Member added successfully
-        toast.success(response.message); // Use toast for success message
-        console.log("inside if");
-
-        // Optionally, you can clear the form or perform other actions after a successful submission.
+        toast.success(response.message);
         // Clear the form data, for example:
         setFormData(membershipDataStructure);
         setSelectedPhotoName('');
         // Reset the photo requirement
         setIsPhotoRequired(true);
       } else {
-        console.log(response.error);
-        console.log("I go to else");
-        // Handle other response data or errors if needed
-        toast.error(response.error); // Use toast for error message
+        toast.error(response.error);
       }
     } catch (error) {
-      console.log("there was some error");
       // Handle network errors or other exceptions
-      toast.error('Error adding member.catch'); // Use toast for error message
+      toast.error('Error adding member.catch');
     }
   }
-
   const { getRootProps, getInputProps } = useDropzone({
     accept: '.jpg, .jpeg, .png',
     onDrop: handlePhotoChange,
@@ -167,12 +145,12 @@ const MembershipForm = () => {
               placeholder="ID Card will be sent in WhatsApp"
               value={formData.mobile}
               onChange={handleInputChange}
-              onBlur={handleMobileBlur} // Add this onBlur event handler
+              onBlur={handleMobileBlur}
               required
             />
             {mobileUniqueError && (
               <div className={`${styles.error} ${styles.mobileError}`}>
-                Mobile number already exists. Please use a different mobile number.
+                Mobile number already exists. Use a different mobile number.
               </div>
             )}
           </div>
@@ -284,7 +262,7 @@ const MembershipForm = () => {
                 <Image
                   src={formData.photo}
                   alt="Selected"
-                  width={100} // Set the width and height as needed
+                  width={100}
                   height={100}
                 />
               </div>

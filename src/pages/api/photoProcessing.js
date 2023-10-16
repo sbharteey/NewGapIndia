@@ -27,7 +27,6 @@ const processPhoto = (req, res) => {
           .resize({ width: 200 }) // Adjust the dimensions as needed
           .toFile(`uploads/processed_${req.file.filename}`, (error) => {
             if (error) {
-              console.error('Error processing image:', error);
               return res.status(500).json({ error: 'Error processing image' });
             }
 
@@ -40,7 +39,6 @@ const processPhoto = (req, res) => {
           });
       });
     } catch (error) {
-      console.error('Error processing image:', error);
       res.status(500).json({ error: 'Error processing image' });
     }
   } else {

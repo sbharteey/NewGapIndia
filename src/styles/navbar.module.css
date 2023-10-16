@@ -1,7 +1,7 @@
 /* src/styles/navbar.module.css */
 .navbar {
   position: fixed;
-  top: 60px; /* Adjust this value based on your header's height */
+  top: 60px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -17,7 +17,6 @@
   display: flex;
   gap: 4vw;
   list-style: none;
-  
 }
 
 .navItem {
@@ -27,7 +26,7 @@
 }
 
 .navItem a {
-  text-decoration: none; /* Remove text decoration for the link */
+  text-decoration: none;
   color: rgb(249, 248, 251);
 }
 
@@ -38,7 +37,7 @@
 @media (max-width: 768px) {
   .navbar {
     position: fixed;
-    top: 30px; /* Adjust this value based on your header's height */
+    top: 30px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -51,6 +50,6 @@
   }
 
   .navItem {
-    font-size: .95rem;  
+    font-size: .95rem;
   }
 }

@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px; /* Add padding for spacing */
+  padding: 20px;
 }
 
 .footer {
-  margin-top: auto; /* Pushes the footer to the bottom of the container */
+  margin-top: auto;
   height: 60px;
   align-items: center;
   display: flex;
@@ -22,10 +22,11 @@
   padding: 20px;
   gap: 1rem;
 }
+
 .socialIcons {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Adjust the gap as needed */
+  gap: 1rem;
 }
 
 .socialIcons a {
@@ -33,7 +34,7 @@
 }
 
 .socialIcons a:hover {
-  opacity: 0.7; /* Adjust the hover effect as desired */
+  opacity: 0.7;
 }
 
 .socialIcons img {
@@ -44,15 +45,15 @@
 .copyRight {
   font-size: 1.2rem;
 }
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
-    text-align: center; /* Center align the content */
+    text-align: center;
     gap: 0;
   }
+
   .copyRight {
     font-size: .8rem;
   }
-
 }
-    

@@ -14,7 +14,7 @@ const drive = google.drive({
 
 // Example: Upload a file from the 'Office Birr' folder in Google Drive
 async function uploadFile() {
-  const folderId = '1j1-il4qcpi5XK8-u-3BSKQ4baU58XYf4'; // Replace with the folder ID of 'Office Birr'
+  const folderId = '1j1-il4qcpi5XK8-u-3BSKQ4baU58XYf4';
 
   const res = await drive.files.create({
     requestBody: {
@@ -23,7 +23,7 @@ async function uploadFile() {
     },
     media: {
       mimeType: 'image/jpeg', // Specify the MIME type for an image file
-      body: 'myphoto.jpg', // Replace 'myphoto.jpg' with the actual photo file path
+      body: 'myphoto.jpg',
     },
   });
 

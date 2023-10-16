@@ -20,7 +20,7 @@ function MembersList() {
         <div key={member._id}>
           {/* Render member data */}
           <Link href={`/members/${member._id}`}>
-            
+
           </Link>
         </div>
       ))}

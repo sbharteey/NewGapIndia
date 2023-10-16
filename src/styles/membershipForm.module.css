@@ -1,5 +1,4 @@
 /* styles/membershipForm.module.css */
-
 .membershipFormContainer {
   display: flexbox;
   position: relative;
@@ -32,8 +31,8 @@
 
 .formGroup label.required::after {
   content: '*';
-  color: red; /* You can change the color as desired */
-  margin-left: 5px; /* Add some space between label and asterisk */
+  color: red;
+  margin-left: 5px;
 }
 
 .formGroup input[type="text"],
@@ -107,25 +106,21 @@
 
 /* Add style for the 'required' class */
 .required {
-  color: rgb(255, 255, 255); /* You can change the color as desired */
-   margin-left: 5px;
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
   font-size: 20px;
 }
 
-/* styles/membershipForm.module.css */
-
-/* ... (previous styles) */
-
 /* Add drop zone styles */
 .dropzone {
-  border: 2px dashed #007bff; /* Dashed border for drop zone */
+  border: 2px dashed #007bff;
   padding: 20px;
   text-align: center;
   cursor: pointer;
 }
 
 .dropzone:hover {
-  background-color: #f6f6f7; /* Change background color on hover */
+  background-color: #f6f6f7;
 }
 
 /* Style for the custom-styled file input button */
@@ -142,7 +137,7 @@
 
 /* Add style for the 'required' class */
 .required {
-  color: rgb(255, 255, 255); /* You can change the color as desired */
+  color: rgb(255, 255, 255);
   margin-left: 5px;
   font-size: 20px;
 }
@@ -155,6 +150,6 @@
 
 /* Style for the selected photo preview */
 .selectedPhotoPreview {
-  max-width: 100%; /* Ensure the photo doesn't exceed container width */
+  max-width: 100%;
   margin-top: 10px;
 }

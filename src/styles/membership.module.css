@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  
   background-color: rgb(27, 27, 27);
   color: white;
   position: relative;
@@ -15,19 +14,19 @@
   margin-top: 4rem;
   margin-bottom: 8rem;
 }
-  
+
+.membershipTitle {
+  font-size: 1rem;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
   .membershipTitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
     word-spacing: 4px;
     letter-spacing: 1px;
     margin-bottom: 1rem;
   }
-  
-  @media (max-width: 768px) {
-    .membershipTitle {
-      font-size: 0.9rem;
-      word-spacing: 4px;
-      letter-spacing: 1px;
-      margin-bottom: 1rem;
-    }
-  }
+}

@@ -10,7 +10,7 @@ const Subnavbar = () => {
     <div className={subnavbarStyles.subnavbar}>
       <SearchBar className={subnavbarStyles.searchBar} onSearch={(query) => console.log('Search query:', query)} />
       <DonateButton className={subnavbarStyles.donateButton} />
-      <PrintCard className={subnavbarStyles.printCard} /> {/* Include the PrintCard component with a class name */}
+      <PrintCard className={subnavbarStyles.printCard} />
     </div>
   );
 };

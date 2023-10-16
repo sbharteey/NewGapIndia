@@ -1,5 +1,4 @@
 // pages/api/batch.js
-
 import connectDatabase from '../../../utils/database';
 import Membership from '../../models/Membership';
 
@@ -11,7 +10,6 @@ export default async function handler(req, res) {
   if (!userIsAdmin) {
     return res.status(403).json({ error: 'Unauthorized' });
   }
-
   switch (req.method) {
     case 'GET':
       try {
@@ -21,7 +19,6 @@ export default async function handler(req, res) {
         res.status(500).json({ error: 'Failed to fetch membership data.' });
       }
       break;
-
     case 'POST':
       try {
         const {
@@ -33,10 +30,8 @@ export default async function handler(req, res) {
           vidhanSabha,
           voterId,
         } = req.body;
-
         // Check if the mobile number is already in the database
         const existingMobile = await Membership.findOne({ mobile });
-
         if (existingMobile) {
           return res.status(400).json({ error: 'Mobile number already exists.' });
         }
@@ -60,9 +55,7 @@ export default async function handler(req, res) {
 
     case 'PUT':
       try {
-        // PUT request handling code
-        // Similar to what you had for individual member updates
-        // You can use the same code here if it suits your needs
+
       } catch (error) {
         res.status(500).json({ error: 'Failed to update members.' });
       }

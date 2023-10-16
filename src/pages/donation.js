@@ -1,7 +1,7 @@
 // src/pages/donation.js
 import React from 'react';
 import Layout from '../layout';
-import Image from 'next/image'; // Import the Image component
+import Image from 'next/image';
 import styles from '../styles/donation.module.css';
 
 const DonationPage = () => {
@@ -10,7 +10,7 @@ const DonationPage = () => {
     ifscCode: 'BKID0006069',
     accountHolderName: 'GAREEB AADMI PARTY',
   };
-  const upiQRCodeImage = '/images/upi_qr_code.png'; // Replace with the actual image file
+  const upiQRCodeImage = '/images/upi_qr_code.png';
   return (
     <Layout pageTitle="Donation">
       <div className={styles.main}>
@@ -23,27 +23,25 @@ const DonationPage = () => {
             <p>देश का हर व्यक्ति कम से कम 21 रुपये का सहयोग अवश्य करे आपका 21 रुपया हम लाखों में लौटाकर आपको देंगे ये हमारा वादा  है</p>
           </div>
           <div className={styles.imgandPaymentDetail}>
-          <div className={styles.paymentDetails}>
-            <h1>Bank Account Details:</h1>
-            <p>Account Number :  {bankAccountDetails.accountNumber}</p>
-            <p>IFSC Code :  {bankAccountDetails.ifscCode}</p>
-            <p>Account:  {bankAccountDetails.accountHolderName}</p>
-          </div>
-          <div className={styles.qrCodeContainer}>
-  <div className="image-wrapper">
-    <Image
-      src={upiQRCodeImage}
-      alt="UPI QR Code"
-      width={300} // Adjust width as needed
-      height={300} // Adjust height as needed
-    />
-  </div>
-  </div>
-</div>
-
+            <div className={styles.paymentDetails}>
+              <h1>Bank Account Details:</h1>
+              <p>Account Number :  {bankAccountDetails.accountNumber}</p>
+              <p>IFSC Code :  {bankAccountDetails.ifscCode}</p>
+              <p>Account:  {bankAccountDetails.accountHolderName}</p>
+            </div>
+            <div className={styles.qrCodeContainer}>
+              <div className="image-wrapper">
+                <Image
+                  src={upiQRCodeImage}
+                  alt="UPI QR Code"
+                  width={300}
+                  height={300}
+                />
+              </div>
+            </div>
           </div>
         </div>
-      
+      </div>
     </Layout>
   );
 };

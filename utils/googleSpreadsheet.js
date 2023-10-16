@@ -1,8 +1,8 @@
 // utils/googleSpreadsheet.js
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-const creds = require('./secrets.json'); // Replace with the path to your JSON API key file.
+const creds = require('./secrets.json'); 
 
-const doc = new GoogleSpreadsheet('1EIjbFfjBPvZzWU9LYiQ90BkLnu-p3XA1LT8FkVdTI2E'); // Replace with your Google Sheet's ID.
+const doc = new GoogleSpreadsheet('1EIjbFfjBPvZzWU9LYiQ90BkLnu-p3XA1LT8FkVdTI2E');
 
 async function accessGoogleSheet() {
   await doc.useServiceAccountAuth(creds);

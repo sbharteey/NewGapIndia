@@ -26,7 +26,6 @@ export default async function handler(req, res) {
 
       res.status(200).json({ message: 'Member\'s photo updated successfully.' });
     } catch (error) {
-      console.error(error); // Log any errors for debugging
       res.status(500).json({ error: 'Failed to update the member\'s photo.' });
     }
   } else {
