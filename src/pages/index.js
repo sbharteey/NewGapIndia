@@ -42,7 +42,7 @@ const Home = () => {
         </p>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
 export default Home;
