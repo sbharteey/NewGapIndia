@@ -2,7 +2,7 @@
 .main {
   display: flex;
   width: 100%;
-  height: calc(100vh - 350px);
+  height: auto;
 }
 
 .container {
@@ -13,11 +13,12 @@
   background-color: rgb(27, 27, 27);
   color: rgb(255, 255, 255);
   max-width: 80%;
-  max-height: calc(100vh - 0px);
+  max-height: none;
   margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
   font-size: 1rem;
-  line-height: 2;
-  word-spacing: .25rem;
+  line-height: 1.6; 
 }
 
 .google-docs-content {
@@ -44,11 +45,10 @@
 }
 
 .image {
-  display: flexbox;
-  position: relative;
-  width: 10rem;
-  border-radius: 40%;
   float: right;
+  width: 200px;
+  border-radius: 40%;
+  /* Other styles... */
 }
 
 .h1 {
@@ -68,11 +68,19 @@
     background-color: rgb(27, 27, 27);
     color: rgb(255, 255, 255);
     max-width: 80%;
-    height: calc(100vh - 50px);
+    max-height: none;
     margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
-    line-height: 2;
-    word-spacing: .25rem;
+    line-height: 1.6; 
+  }
+
+  .image {
+    float: right;
+    width: 200px;
+    border-radius: 40%;
+    /* Other styles... */
   }
 
   .google-docs-content {
@@ -98,15 +106,6 @@
     margin-bottom: 10px;
   }
 
-  .image {
-    display: flexbox;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 40%;
-    float: right;
-  }
-
   .h1 {
     display: flex;
     position: relative;
@@ -114,5 +113,4 @@
     list-style: none;
     font-size: 1.4rem;
   }
-
 }

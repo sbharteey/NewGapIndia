@@ -1,11 +1,17 @@
 {
     "configurations": [
-    
         {
             "type": "chrome",
             "name": "http://src/pages/api/search.js",
             "request": "launch",
             "url": "http://src/pages/api/search.js"
+        },
+        {
+            "name": "Docker Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node"
         }
     ]
 }
