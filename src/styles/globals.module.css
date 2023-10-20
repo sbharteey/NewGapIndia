@@ -1,0 +1,29 @@
+/* src/styles/globals.module.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body { 
+    width: 100%;
+    height: 100%;
+    background-color: rgb(27, 27, 27);
+  }
+  
+  body {
+    padding-top: 181px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Optionally, you can set Arial for specific elements as well */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+  }
+  @media (max-width: 768px) {
+    body {
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+  }
