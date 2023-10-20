@@ -1,7 +1,7 @@
 // src/pages/_app.js
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import '../../src/styles/globals.css';
+import '../../src/styles/globals.module.css';
 import toast, { Toaster } from 'react-hot-toast';
 
 const queryClient = new QueryClient();
