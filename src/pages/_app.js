@@ -2,7 +2,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import toast, { Toaster } from 'react-hot-toast';
-import '../styles/globals.css';
+import '../globals.css';
 
 const queryClient = new QueryClient();
 
