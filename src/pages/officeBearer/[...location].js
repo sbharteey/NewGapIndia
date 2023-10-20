@@ -6,7 +6,7 @@ import Layout from "../../layout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 import MembershipCardTemplate from '../../components/MembershipCardTemplate';
-import styles from "../../styles/officeBearerLocation.module.css";
+import styles from "../../../src/styles/officeBearerLocation.module.css";
 
 const OfficeBearerPage = () => {
   const router = useRouter();

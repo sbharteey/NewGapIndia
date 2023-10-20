@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Layout from '../layout';
 import LocationSelector from '../components/LocationSelector';
 import officesData from '../data/officesLocationData';
-import styles from '../styles/offices.module.css';
+import styles from '../../src/styles/offices.module.css';
 
 const OfficesPage = () => {
   const handleFormSubmit = (filteredOfficeBearers) => {

@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import MembershipCardTemplate from '../../components/MembershipCardTemplate';
 import Layout from '../../layout';
-import styles from '../../styles/memberCardPage.module.css';
+import styles from '../../../src/styles/memberCardPage.module.css';
 
 const MemberCardPage = () => {
   const router = useRouter();

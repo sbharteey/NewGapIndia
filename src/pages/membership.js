@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import Layout from '../layout';
 import MembershipForm from '../components/MembershipForm';
-import styles from '../styles/membership.module.css';
+import styles from '../../src/styles/membership.module.css';
 
 const MembershipPage = () => {
   return (
