@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../layout';
-import styles from '../styles/manifesto.module.css'
-import Image from 'next/image'; // Import 'Image' from 'next/image'
+import styles from '../../src/styles/manifesto.module.css'
+import Image from 'next/image';
 
 const Manifesto = () => {
   return (

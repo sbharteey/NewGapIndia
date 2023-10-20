@@ -1,8 +1,9 @@
 // src/pages/index.js
 import React, { useEffect, useState } from 'react';
 import Layout from '../layout';
-import styles from '../styles/index.module.css';
+import styles from '../../src/styles/index.module.css';
 import Image from 'next/image';
+
 
 const Home = () => {
   const [content, setContent] = useState('');
