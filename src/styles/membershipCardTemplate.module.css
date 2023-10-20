@@ -25,7 +25,7 @@
 .registration {
   display: flex;
   font-size: 0.8rem;
-  justify-content: end;
+  justify-content: flex-end;
   position: relative;
   top: 0.4rem;
   right: 3rem;
@@ -67,7 +67,7 @@
 
 .www {
   display: flexbox;
-  justify-content: end;
+  justify-content: flex-end;
   width: 7.1rem;
   color: black;
   font-size: smaller;

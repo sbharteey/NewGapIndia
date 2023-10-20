@@ -21,7 +21,6 @@ const OfficeBearerPage = () => {
     const fetchOfficeBearers = async () => {
       try {
         const response = await fetch(`/api/queryOfficeBearers?country=${country}&state=${state}&lokSabha=${lokSabha}&vidhanSabha=${vidhanSabha}`);
-
         if (response.ok) {
           const data = await response.json();
           setOfficeBearers(data);
@@ -32,11 +31,12 @@ const OfficeBearerPage = () => {
         console.error('Error fetching office bearers:', error);
       }
     };
-
+  
     if (location) {
       fetchOfficeBearers();
     }
-  }, [location]);
+  }, [location, country, lokSabha, state, vidhanSabha]);
+  
 
   return (
     <div>
