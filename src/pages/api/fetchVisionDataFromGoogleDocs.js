@@ -20,9 +20,11 @@ async function fetchVisionDataFromGoogleDocs() {
   try {
     // Get the content of the Google Docs document
     const response = await docs.documents.get({ documentId });
+    console.log(response,'response');
     const { title, body } = response.data;
     // Check if the 'body' and 'content' properties exist
     if (body && body.content) {
+      console.log('inside if',body);
       // Extract the content from the document body
       const content = body.content
         .map((item) => item.paragraph?.elements[0]?.textRun?.content || '')
