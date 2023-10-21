@@ -2,10 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/fetchVisionData": "pages/api/fetchVisionData.js",
   "/officeBearer/[...location]": "pages/officeBearer/[...location].js",
-  "/api/queryOfficeBearers": "pages/api/queryOfficeBearers.js",
   "/offices": "pages/offices.js",
-  "/api/searchMembership": "pages/api/searchMembership.js",
   "/": "pages/index.js"
 }

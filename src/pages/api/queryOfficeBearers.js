@@ -90,8 +90,10 @@ export default async function handler(req, res) {
       });
       console.log(officeBearersData[0]);
       if (officeBearersData[0] !== undefined) {
+        console.log('Inside if');
         res.status(200).json(officeBearersData);
       } else {
+        console.log('Inside else');
         res.status(404).json({ message: 'No office bearers found for the selected location' });
       }
     }
