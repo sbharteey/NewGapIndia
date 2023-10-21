@@ -2,5 +2,13 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/manifesto": "pages/manifesto.js"
+  "/": "pages/index.js",
+  "/membership": "pages/membership.js",
+  "/api/searchMembership": "pages/api/searchMembership.js",
+  "/donation": "pages/donation.js",
+  "/offices": "pages/offices.js",
+  "/officeBearer/[...location]": "pages/officeBearer/[...location].js",
+  "/api/queryOfficeBearers": "pages/api/queryOfficeBearers.js",
+  "/manifesto": "pages/manifesto.js",
+  "/members/[mobile]": "pages/members/[mobile].js"
 }

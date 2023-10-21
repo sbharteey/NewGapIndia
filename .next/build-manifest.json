@@ -10,11 +10,13 @@
     "static/development/_buildManifest.js",
     "static/development/_ssgManifest.js"
   ],
-  "rootMainFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/main-app.js"
-  ],
+  "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -25,10 +27,35 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/donation": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/donation.js"
+    ],
     "/manifesto": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/manifesto.js"
+    ],
+    "/members/[mobile]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/members/[mobile].js"
+    ],
+    "/membership": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/membership.js"
+    ],
+    "/officeBearer/[...location]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/officeBearer/[...location].js"
+    ],
+    "/offices": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/offices.js"
     ]
   },
   "ampFirstPages": []
